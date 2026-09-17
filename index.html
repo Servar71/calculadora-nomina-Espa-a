@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sueldo Neto y Retenciones de IRPF en España</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #0056b3;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #004085;
+        }
+        .results {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            display: none;
+        }
+        .info-section {
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Calculadora de Sueldo Neto y Retenciones de IRPF en España</h1>
+    <p>Calcula tu salario neto mensual y anual, retenciones de IRPF y aportaciones a la Seguridad Social adaptado a la normativa vigente.</p>
+
+    <div class="form-group">
+        <label for="bruto">Salario Bruto Anual (€):</label>
+        <input type="number" id="bruto" placeholder="Ej. 24000" value="24000">
+    </div>
+
+    <div class="form-group">
+        <label for="pagas">Número de pagas:</label>
+        <select id="pagas">
+            <option value="12">12 pagas (extras prorrateadas)</option>
+            <option value="14">14 pagas</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="contrato">Tipo de contrato:</label>
+        <select id="contrato">
+            <option value="indefinido">Indefinido (Cotización 6,35%)</option>
+            <option value="temporal">Temporal (Cotización 6,45%)</option>
+        </select>
+    </div>
+
+    <button onclick="calcularNomina()">Calcular Sueldo Neto</button>
+
+    <div class="results" id="resultados">
+        <h2>Resultado de tu Nómina Estimada</h2>
+        <p><strong>Sueldo Bruto Anual:</strong> <span id="resBruto">0</span> €</p>
+        <p><strong>Cotización Seguridad Social (Anual):</strong> <span id="resSS">0</span> €</p>
+        <p><strong>Retención IRPF Estimada (Anual):</strong> <span id="resIRPF">0</span> € (<span id="resPorcentajeIRPF">0</span>%)</p>
+        <hr>
+        <p><strong>Sueldo Neto Anual:</strong> <span id="resNetoAnual" style="color: #28a745; font-size: 1.2em;">0</span> €</p>
+        <p><strong>Sueldo Neto Mensual (<span id="txtPagas">12</span> pagas):</strong> <span id="resNetoMensual" style="color: #28a745; font-size: 1.4em; font-weight: bold;">0</span> €</p>
+    </div>
+
+    <div class="info-section">
+        <h2>¿Cómo se calcula la nómina y el salario neto en España?</h2>
+        <p>El salario neto es el resultado de restar al Salario Bruto Anual las deducciones obligatorias marcadas por la ley:</p>
+        <ul>
+            <li><strong>Cotizaciones a la Seguridad Social:</strong> Aportaciones obligatorias del trabajador para contingencias comunes, desempleo y formación profesional (6,35% en indefinidos o 6,45% en temporales).</li>
+            <li><strong>Retenciones del IRPF (Agencia Tributaria):</strong> El IRPF es un impuesto progresivo según la escala estatal y autonómica fijada por la Agencia Tributaria.</li>
+        </ul>
+
+        <h3>Preguntas Frecuentes</h3>
+        <p><strong>¿Es mejor cobrar en 12 o en 14 pagas?</strong><br>El importe bruto anual es exactamente el mismo. En 12 pagas cobras más cada mes al incluir las prorrateadas, mientras que en 14 recibes abonados extra en junio y diciembre.</p>
+    </div>
+</div>
+
+<script>
+function calcularNomina() {
+    const bruto = parseFloat(document.getElementById('bruto').value) || 0;
+    const pagas = parseInt(document.getElementById('pagas').value);
+    const contrato = document.getElementById('contrato').value;
+
+    // Tipo cotización SS
+    const pctSS = (contrato === 'indefinido') ? 0.0635 : 0.0645;
+    const ssAnual = bruto * pctSS;
+
+    // Estimación progresiva simplificada de IRPF
+    let irpfPct = 0;
+    if (bruto > 60000) irpfPct = 0.27;
+    else if (bruto > 35200) irpfPct = 0.21;
+    else if (bruto > 20200) irpfPct = 0.15;
+    else if (bruto > 12450) irpfPct = 0.09;
+    else irpfPct = 0.02;
+
+    const irpfAnual = bruto * irpfPct;
+    const netoAnual = bruto - ssAnual - irpfAnual;
+    const netoMensual = netoAnual / pagas;
+
+    document.getElementById('resBruto').innerText = bruto.toFixed(2);
+    document.getElementById('resSS').innerText = ssAnual.toFixed(2);
+    document.getElementById('resIRPF').innerText = irpfAnual.toFixed(2);
+    document.getElementById('resPorcentajeIRPF').innerText = (irpfPct * 100).toFixed(1);
+    document.getElementById('resNetoAnual').innerText = netoAnual.toFixed(2);
+    document.getElementById('resNetoMensual').innerText = netoMensual.toFixed(2);
+    document.getElementById('txtPagas').innerText = pagas;
+
+    document.getElementById('resultados').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
