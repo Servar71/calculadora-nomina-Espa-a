@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subida del Salario Mínimo Interprofesional (SMI) en 2026 | CalculoNómina</title>
+  <meta name="description" content="Análisis detallado sobre la subida del SMI en 2026, su impacto en la retención de IRPF y en las cotizaciones a la Seguridad Social." />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary: #ec4899;
+      --primary-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+      --bg-light: #f8fafc;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+    header {
+      background: var(--primary-gradient);
+      color: white;
+      padding: 1.5rem 1.5rem 3.5rem 1.5rem;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: white; text-decoration: none;
+    }
+    .logo i { background: rgba(255, 255, 255, 0.2); padding: 8px 10px; border-radius: 12px; }
+
+    .nav-links { display: flex; gap: 8px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { 
+      color: rgba(255, 255, 255, 0.9); 
+      text-decoration: none; 
+      font-weight: 600; 
+      padding: 6px 12px; 
+      border-radius: 16px; 
+      font-size: 0.88rem;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.25); color: #fff; }
+
+    .hero { max-width: 800px; margin: 1rem auto 0 auto; text-align: center; }
+    .hero h1 { font-size: 2.1rem; font-weight: 800; margin-bottom: 0.8rem; line-height: 1.3; }
+
+    .main-container { max-width: 900px; margin: -2.5rem auto 3rem auto; padding: 0 1.5rem; }
+
+    .article-card {
+      background: white; border-radius: 24px; padding: 2.5rem; box-shadow: var(--card-shadow); margin-bottom: 2rem;
+    }
+
+    .article-meta { display: flex; gap: 15px; align-items: center; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .article-tag { background: #fdf2f8; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-weight: 700; }
+
+    .article-card h2 { color: #0f172a; margin: 1.8rem 0 0.8rem 0; font-size: 1.35rem; font-weight: 700; }
+    .article-card p { color: #334155; margin-bottom: 1.2rem; font-size: 1.05rem; line-height: 1.7; }
+    .article-card ul { margin-left: 1.5rem; color: #334155; margin-bottom: 1.5rem; line-height: 1.8; }
+
+    .callout {
+      background: #fdf2f8; border-left: 4px solid var(--primary); padding: 1.2rem; border-radius: 0 12px 12px 0; margin: 2rem 0;
+    }
+    .callout p { color: #831843; margin-bottom: 0; font-weight: 600; }
+
+    .btn-back {
+      display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 700; text-decoration: none; margin-bottom: 1.5rem;
+    }
+
+    footer { background: #0f172a; color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; margin-top: 5rem; }
+    footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
+
+    @media (max-width: 850px) {
+      header { padding-bottom: 2.5rem; }
+      .hero h1 { font-size: 1.7rem; }
+      nav { flex-direction: column; align-items: flex-start; }
+      .article-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-calculator"></i>
+        <span>CalculoNómina</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tramos-irpf.html">Tramos IRPF</a></li>
+        <li><a href="finiquito.html">Finiquito</a></li>
+        <li><a href="pagas-extra.html">Pagas Extra</a></li>
+        <li><a href="cotizaciones.html">Cotizaciones</a></li>
+        <li><a href="horas-extra.html">Horas Extra</a></li>
+        <li><a href="baja-medica.html">Baja Médica</a></li>
+        <li><a href="noticias.html" class="active">Noticias</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <h1>Actualidad y Normativa Laboral</h1>
+    </section>
+  </header>
+
+  <main class="main-container">
+    
+    <a href="noticias.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver a Noticias</a>
+
+    <article class="article-card">
+      <div class="article-meta">
+        <span class="article-tag">Salario Mínimo</span>
+        <span><i class="fa-regular fa-calendar"></i> 17 de Septiembre de 2026</span>
+      </div>
+
+      <h1 style="font-size: 1.8rem; color: #0f172a; margin-bottom: 1.2rem; line-height: 1.3;">
+        Nueva subida del Salario Mínimo Interprofesional (SMI) en 2026: ¿Cómo afecta a tu nómina y retenciones?
+      </h1>
+
+      <p>
+        La revisión del Salario Mínimo Interprofesional (SMI) en España sitúa el suelo salarial en <strong>1.221 euros mensuales distribuidos en 14 pagas</strong> (lo que equivale a un total de 17.094 euros brutos anuales). Esta medida no solo beneficia a las personas que percibían el sueldo mínimo previo, sino que también recalibra el marco de retenciones de IRPF y las bases de cotización a la Seguridad Social.
+      </p>
+
+      <h2>1. Impacto directo en la retención de IRPF</h2>
+      <p>
+        Con el ajuste normativo, el Ministerio de Hacienda eleva el mínimo exento de retención para alinearlo con la cuantía del nuevo SMI. Esto garantiza que un trabajador a jornada completa que perciba el salario mínimo no sufra retenciones del IRPF en su nómina mensual, siempre y cuando sus circunstancias personales no incluyan otros ingresos extraordinarios.
+      </p>
+
+      <h2>2. Ajuste en las cotizaciones a la Seguridad Social</h2>
+      <p>
+        Aunque el IRPF pueda situarse en el 0% para las rentas equivalentes al SMI, las cotizaciones sociales no quedan exentas. El trabajador continúa aportando el tipo fijado legalmente para contingencias comunes, desempleo, formación y el Mecanismo de Equidad Intergeneracional (MEI), sumando un total aproximado del 6,47% para contratos generales.
+      </p>
+
+      <h2>3. Repercusión en los convenios colectivos</h2>
+      <p>
+        Los convenios colectivos cuyas tablas salariales fijen sueldos base por debajo del nuevo límite legal deben actualizar automáticamente sus importes. Ninguna empresa ni acuerdo de empresa puede fijar retribuciones inferiores a los 1.221 € mensuales para una jornada ordinaria de trabajo de 40 horas semanales.
+      </p>
+
+      <div class="callout">
+        <p>💡 <strong>¿Quieres comprobar el impacto en tu sueldo líquido?</strong> Puedes simular tu salario neto exacto utilizando nuestra <a href="index.html" style="color: #ec4899; text-decoration: underline;">Calculadora de Nómina Online</a>.</p>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CalculoNómina - Todos los derechos reservados.</p>
+    <p style="margin-top: 10px;">
+      <a href="index.html">Inicio</a> | 
+      <a href="tramos-irpf.html">Tramos IRPF</a> | 
+      <a href="finiquito.html">Finiquito</a> | 
+      <a href="pagas-extra.html">Pagas Extra</a> | 
+      <a href="cotizaciones.html">Cotizaciones</a> | 
+      <a href="horas-extra.html">Horas Extra</a> | 
+      <a href="baja-medica.html">Baja Médica</a> | 
+      <a href="noticias.html">Noticias</a>
+    </p>
+  </footer>
+
+</body>
+</html>
