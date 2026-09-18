@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reducción de Jornada Laboral a 37,5 horas | CalculoNómina</title>
-  <meta name="description" content="Análisis sobre la reducción de la jornada laboral máxima en España a 37,5 horas semanales sin reducción salarial y su impacto en la nómina." />
+  <title>Guía Completa: Reducción de la Jornada Laboral a 37,5 Horas en 2026 | CalculoNómina</title>
+  <meta name="description" content="Análisis exhaustivo sobre la reducción de la jornada laboral máxima a 37,5 horas en España: impacto salarial, valor de la hora ordinaria, horas extras y registro horario." />
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -20,7 +20,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.7; }
 
     header {
       background: var(--primary-gradient);
@@ -66,29 +66,41 @@
     .main-container { max-width: 900px; margin: -2.5rem auto 3rem auto; padding: 0 1.5rem; }
 
     .article-card {
-      background: white; border-radius: 24px; padding: 2.5rem; box-shadow: var(--card-shadow); margin-bottom: 2rem;
+      background: white; border-radius: 24px; padding: 3rem; box-shadow: var(--card-shadow); margin-bottom: 2rem;
     }
 
-    .article-meta { display: flex; gap: 15px; align-items: center; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .article-meta { display: flex; gap: 15px; align-items: center; font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem; flex-wrap: wrap; }
     .article-tag { background: #fdf2f8; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-weight: 700; }
 
-    .article-card h2 { color: #0f172a; margin: 1.8rem 0 0.8rem 0; font-size: 1.35rem; font-weight: 700; }
-    .article-card p { color: #334155; margin-bottom: 1.2rem; font-size: 1.05rem; line-height: 1.7; }
-    .article-card ul { margin-left: 1.5rem; color: #334155; margin-bottom: 1.5rem; line-height: 1.8; }
+    .article-card h2 { color: #0f172a; margin: 2rem 0 1rem 0; font-size: 1.5rem; font-weight: 800; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.5rem; }
+    .article-card h3 { color: #1e293b; margin: 1.5rem 0 0.8rem 0; font-size: 1.2rem; font-weight: 700; }
+    .article-card p { color: #334155; margin-bottom: 1.3rem; font-size: 1.05rem; line-height: 1.8; }
+    .article-card ul, .article-card ol { margin-left: 1.5rem; color: #334155; margin-bottom: 1.5rem; line-height: 1.8; }
 
     .article-img {
       width: 100%;
-      max-height: 400px;
+      max-height: 420px;
       object-fit: cover;
       border-radius: 18px;
-      margin: 1.5rem 0;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      margin: 1.5rem 0 2rem 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
 
+    .table-container { overflow-x: auto; margin: 2rem 0; }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th, td { padding: 14px 16px; border-bottom: 1px solid #e2e8f0; }
+    th { background: #f8fafc; color: #0f172a; font-weight: 700; font-size: 0.95rem; }
+    td { font-size: 0.95rem; color: #334155; }
+
     .callout {
-      background: #fdf2f8; border-left: 4px solid var(--primary); padding: 1.2rem; border-radius: 0 12px 12px 0; margin: 2rem 0;
+      background: #fdf2f8; border-left: 5px solid var(--primary); padding: 1.5rem; border-radius: 0 16px 16px 0; margin: 2rem 0;
     }
-    .callout p { color: #831843; margin-bottom: 0; font-weight: 600; }
+    .callout p { color: #831843; margin-bottom: 0; font-weight: 600; font-size: 1.05rem; }
+
+    .inline-link {
+      color: var(--primary); font-weight: 700; text-decoration: underline; transition: color 0.2s;
+    }
+    .inline-link:hover { color: #8b5cf6; }
 
     .btn-back {
       display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 700; text-decoration: none; margin-bottom: 1.5rem;
@@ -101,7 +113,7 @@
       header { padding-bottom: 2.5rem; }
       .hero h1 { font-size: 1.7rem; }
       nav { flex-direction: column; align-items: flex-start; }
-      .article-card { padding: 1.5rem; }
+      .article-card { padding: 1.8rem; }
     }
   </style>
 </head>
@@ -136,38 +148,105 @@
 
     <article class="article-card">
       <div class="article-meta">
-        <span class="article-tag">Reforma Laboral</span>
+        <span class="article-tag">Reforma Laboral 2026</span>
         <span><i class="fa-regular fa-calendar"></i> 17 de Septiembre de 2026</span>
+        <span><i class="fa-regular fa-clock"></i> Lectura: 6 min</span>
       </div>
 
-      <h1 style="font-size: 1.8rem; color: #0f172a; margin-bottom: 1.2rem; line-height: 1.3;">
-        Reducción de la jornada laboral a 37,5 horas: ¿Cómo afecta a tu salario neto?
+      <h1 style="font-size: 2rem; color: #0f172a; margin-bottom: 1.2rem; line-height: 1.3;">
+        Reducción de la jornada laboral a 37,5 horas semanales: Análisis exhaustivo del impacto salarial y normativo
       </h1>
 
-      <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80" alt="Reloj y jornada laboral de trabajo" class="article-img" />
-
       <p>
-        La aplicación progresiva de la reducción de la jornada laboral ordinaria máxima en España establece el límite legal en <strong>37,5 horas semanales</strong>. La clave fundamental de esta reforma aprobada por el <a href="https://www.mites.gob.es/" target="_blank" rel="noopener" style="color: #ec4899; font-weight: 700; text-decoration: underline;">Ministerio de Trabajo y Economía Social</a> es que se realiza <strong>sin ninguna disminución del salario percibido</strong> por el empleado.
+        La transformación del mercado de trabajo en España alcanza uno de sus hitos más relevantes con la implementación progresiva de la reducción de la jornada laboral máxima legal de <strong>40 horas a 37,5 horas semanales</strong>. Impulsada a través de las directrices del <a href="https://www.mites.gob.es/" target="_blank" rel="noopener" class="inline-link">Ministerio de Trabajo y Economía Social</a> y recogida en las actualizaciones del <a href="https://www.boe.es/" target="_blank" rel="noopener" class="inline-link">Boletín Oficial del Estado (BOE)</a>, esta medida modifica el marco regulatorio del Estatuto de los Trabajadores.
       </p>
 
-      <h2>1. Incremento del precio por hora trabajada</h2>
+      <!-- IMAGEN PRINCIPAL -->
+      <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80" alt="Control de jornada laboral y reloj de oficina" class="article-img" />
+
+      <h2>1. El principio de intangibilidad salarial: Mismo sueldo por menos tiempo</h2>
       <p>
-        Al reducir las horas de trabajo semanales manteniendo exactamente el mismo salario bruto anual, el valor de cada hora efectiva trabajada se incrementa. Esto beneficia directamente al trabajador en el cálculo de complementos y al valorar la hora ordinaria en su nómina.
+        El pilar fundamental sobre el que se vertebra esta reforma es el <strong>principio de intangibilidad salarial</strong>. Esto significa que la reducción del tiempo de trabajo semanal (2,5 horas menos por semana en jornadas completas) no autoriza en ningún caso a las empresas a aplicar reducciones proporcionales en las retribuciones de los empleados.
+      </p>
+      <p>
+        Tanto la retribución base como los complementos personales, de puesto o de convenio deben mantenerse intactos. Como consecuencia matemática directa, <strong>el valor real de cada hora trabajada aumenta automáticamente</strong>.
       </p>
 
-      <h2>2. Repercusión en las horas extraordinarias</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Parámetro</th>
+              <th>Jornada Anterior (40h)</th>
+              <th>Nueva Jornada (37,5h)</th>
+              <th>Variación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Horas anuales aproximadas</strong></td>
+              <td>1.826 horas</td>
+              <td>1.712 horas</td>
+              <td><strong style="color: #dc2626;">-114 horas/año</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Salario Bruto Anual (Ejemplo)</strong></td>
+              <td>24.000 €</td>
+              <td>24.000 €</td>
+              <td><strong style="color: #2563eb;">Sin cambios (0%)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Precio hora ordinaria</strong></td>
+              <td>13,14 €/hora</td>
+              <td>14,01 €/hora</td>
+              <td><strong style="color: #16a34a;">+6,62% de valor por hora</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>2. Repercusión en el cálculo de las Horas Extraordinarias</h2>
       <p>
-        Cualquier hora realizada por encima de la nueva jornada máxima de 37,5 horas semanales pasará automáticamente a considerarse como hora extraordinaria. Para saber cómo tributan estas horas adicionales en tu liquidación mensual, puedes consultar nuestra guía sobre <a href="horas-extra.html" style="color: #ec4899; font-weight: 700; text-decoration: underline;">Horas Extraordinarias y Cotizaciones</a>.
+        Uno de los puntos clave que genera mayores dudas entre trabajadores y departamentos de recursos humanos es cómo afecta este cambio a las horas extras. Toda hora realizada por encima de las 37,5 horas semanales pasa a catalogarse como hora extraordinaria.
+      </p>
+      <p>
+        Dado que las horas ordinarias incrementan su valor por hora, la base sobre la que se calculan los recargos por horas extraordinarias también sube. Si deseas profundizar en el cálculo de estas percepciones y sus tablas de cotización a la Tesorería General de la <a href="https://www.seg-social.es/" target="_blank" rel="noopener" class="inline-link">Seguridad Social</a>, puedes consultar nuestra guía detallada de <a href="horas-extra.html" class="inline-link">Horas Extraordinarias y Cotizaciones</a>.
       </p>
 
-      <h2>3. Registro horario obligatorio y sanciones</h2>
+      <!-- SEGUNDA IMAGEN -->
+      <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80" alt="Cálculo de nómina y finanzas del trabajador" class="article-img" />
+
+      <h2>3. Impacto en la retención del IRPF y tramos fiscales</h2>
       <p>
-        Las empresas están obligadas a adaptar de forma digital sus sistemas de control de presencia para garantizar el cumplimiento del nuevo tope de horas semanales, evitando así excesos no retribuidos de jornada.
+        Al mantenerse el sueldo bruto anual inalterado, el tipo de retención aplicado a la nómina no sufre variaciones por el mero hecho de trabajar menos horas. Sin embargo, es vital recordar que si la empresa compensa económicamente horas extras derivadas de la nueva ordenación, esos ingresos adicionales pueden elevar el tipo aplicable según las tablas de la Agencia Tributaria.
+      </p>
+      <p>
+        Para comprobar tu porcentaje exacto de retención impositiva en función de tus circunstancias personales y familiares, visita nuestra sección actualizada de <a href="tramos-irpf.html" class="inline-link">Tramos de IRPF 2026</a>.
+      </p>
+
+      <h2>4. Registro Horario Digital y Régimen Sancionador</h2>
+      <p>
+        La legislación exige a las empresas la implantación de sistemas de <strong>registro horario digital accesible y no manipulable</strong>. Los inspectores de trabajo pueden auditar estos registros en tiempo real para verificar que no se superen las 37,5 horas semanales no declaradas.
+      </p>
+      <p>
+        Las sanciones por incumplimiento de la jornada máxima se han endurecido, considerándose infracciones graves por cada trabajador afectado de forma individualizada.
       </p>
 
       <div class="callout">
-        <p>💡 <strong>¿Quieres comprobar el impacto en tu sueldo líquido?</strong> Puedes simular tu salario neto exacto utilizando nuestra <a href="index.html" style="color: #ec4899; text-decoration: underline;">Calculadora de Nómina Online</a>.</p>
+        <p>💡 <strong>Simula tu nómina neta en segundos:</strong> Utiliza nuestra <a href="index.html" class="inline-link">Calculadora de Nómina Neto 2026</a> para calcular tu sueldo líquido exacto de forma gratuita.</p>
       </div>
+
+      <h2>Preguntas Frecuentes (FAQ)</h2>
+      
+      <h3>¿Qué ocurre con los trabajadores a tiempo parcial?</h3>
+      <p>
+        Los contratos a tiempo parcial mantienen su porcentaje relativo respecto a la nueva jornada máxima. Por ejemplo, un trabajador contratado a 20 horas semanales (que antes representaba un 50% de la jornada) pasará automáticamente a representar un porcentaje mayor sobre las 37,5 horas, o bien verá ajustado su salario de forma proporcional si incrementa su coeficiente de jornada.
+      </p>
+
+      <h3>¿Afecta esta medida a las pagas extraordinarias?</h3>
+      <p>
+        No. Las pagas extras continúan devengándose de la forma estipulada en convenio. Puedes conocer más detalles sobre el prorrateo de 12 vs 14 pagas en nuestra guía de <a href="pagas-extra.html" class="inline-link">Pagas Extraordinarias</a>.
+      </p>
     </article>
 
   </main>
@@ -188,3 +267,4 @@
 
 </body>
 </html>
+
