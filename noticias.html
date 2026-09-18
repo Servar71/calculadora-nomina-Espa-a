@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noticias y Actualidad Laboral 2026 | CalculoNómina</title>
+  <meta name="description" content="Novedades sobre el Salario Mínimo Interprofesional, IRPF, cotizaciones a la Seguridad Social y cambios legislativos en la nómina en España." />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary: #ec4899;
+      --primary-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+      --bg-light: #f8fafc;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+    header {
+      background: var(--primary-gradient);
+      color: white;
+      padding: 1.5rem 2rem 3.5rem 2rem;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: white; text-decoration: none;
+    }
+    .logo i { background: rgba(255, 255, 255, 0.2); padding: 10px; border-radius: 12px; }
+
+    .nav-links { display: flex; gap: 15px; list-style: none; }
+    .nav-links a { color: rgba(255, 255, 255, 0.9); text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 20px; transition: all 0.3s; }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.2); color: #fff; }
+
+    .hero { max-width: 800px; margin: 0 auto; text-align: center; }
+    .hero h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.8rem; line-height: 1.2; }
+    .hero p { font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); font-weight: 300; }
+
+    .main-container { max-width: 1100px; margin: -2.5rem auto 3rem auto; padding: 0 1.5rem; }
+
+    .news-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem;
+    }
+
+    .news-card {
+      background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--card-shadow);
+      display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #f1f5f9;
+    }
+
+    .news-tag {
+      display: inline-block; background: #fdf2f8; color: var(--primary); padding: 4px 12px;
+      border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.8rem; align-self: flex-start;
+    }
+
+    .news-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .news-card h2 { font-size: 1.3rem; color: #0f172a; margin-bottom: 0.8rem; font-weight: 700; line-height: 1.3; }
+    .news-card p { color: #334155; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6; }
+
+    footer { background: #0f172a; color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; margin-top: 5rem; }
+    footer a { color: #cbd5e1; text-decoration: none; margin: 0 10px; }
+
+    @media (max-width: 850px) {
+      header { padding-bottom: 2.5rem; }
+      .hero h1 { font-size: 1.8rem; }
+      nav { flex-direction: column; gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-calculator"></i>
+        <span>CalculoNómina</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tramos-irpf.html">Tramos IRPF</a></li>
+        <li><a href="finiquito.html">Finiquito</a></li>
+        <li><a href="noticias.html" class="active">Noticias</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <h1>Noticias y Actualidad Laboral</h1>
+      <p>Mantente informado sobre cambios en el IRPF, el Salario Mínimo y la normativa laboral en España.</p>
+    </section>
+  </header>
+
+  <main class="main-container">
+    <div class="news-grid">
+
+      <!-- Noticia 1 -->
+      <article class="news-card">
+        <div>
+          <span class="news-tag">Legislación</span>
+          <div class="news-date"><i class="fa-regular fa-calendar"></i> Actualizado recientemente</div>
+          <h2>Subida del Salario Mínimo Interprofesional (SMI) en 2026</h2>
+          <p>El SMI se sitúa en 1.221 euros mensuales distribuidos en 14 pagas (17.094 € brutos anuales), lo que supone una mejora directa en el sueldo base de miles de trabajadores.</p>
+        </div>
+      </article>
+
+      <!-- Noticia 2 -->
+      <article class="news-card">
+        <div>
+          <span class="news-tag">Cotizaciones</span>
+          <div class="news-date"><i class="fa-regular fa-calendar"></i> Actualizado recientemente</div>
+          <h2>Aumento del tipo del Mecanismo de Equidad Intergeneracional (MEI)</h2>
+          <p>El MEI pasa a ser del 0,9% en 2026. La empresa asume un 0,75% y el trabajador un 0,15% adicional en su deducción mensual para reforzar el sistema público de pensiones.</p>
+        </div>
+      </article>
+
+      <!-- Noticia 3 -->
+      <article class="news-card">
+        <div>
+          <span class="news-tag">IRPF</span>
+          <div class="news-date"><i class="fa-regular fa-calendar"></i> Actualizado recientemente</div>
+          <h2>Ajustes en la exención del IRPF para rentas bajas</h2>
+          <p>Revisa cómo influye el mínimo personal exento en las nóminas más ajustadas y cuándo es obligatorio presentar la Declaración de la Renta para solicitar devoluciones.</p>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CalculoNómina - Todos los derechos reservados.</p>
+    <p style="margin-top: 10px;">
+      <a href="index.html">Inicio</a> | 
+      <a href="tramos-irpf.html">Tramos IRPF</a> | 
+      <a href="finiquito.html">Finiquito</a> | 
+      <a href="noticias.html">Noticias</a>
+    </p>
+  </footer>
+
+</body>
+</html>
