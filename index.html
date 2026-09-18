@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculadora de Nómina 2026 | Sueldo Neto España</title>
-  <meta name="description" content="Calcula tu sueldo neto mensual y anual en España según tu salario bruto, tipo de contrato, retención de IRPF y comunidad autónoma." />
+  <meta name="description" content="Calcula tu sueldo neto mensual y anual en España según tu salario bruto, tipo de contrato y retenciones." />
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -25,7 +25,7 @@
     header {
       background: var(--primary-gradient);
       color: white;
-      padding: 1.5rem 2rem 4rem 2rem;
+      padding: 1.5rem 1.5rem 4rem 1.5rem;
       border-bottom-left-radius: 30px;
       border-bottom-right-radius: 30px;
       box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
@@ -37,21 +37,32 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .logo {
-      font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: white; text-decoration: none;
+      font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: white; text-decoration: none;
     }
-    .logo i { background: rgba(255, 255, 255, 0.2); padding: 10px; border-radius: 12px; }
+    .logo i { background: rgba(255, 255, 255, 0.2); padding: 8px 10px; border-radius: 12px; }
 
-    .nav-links { display: flex; gap: 15px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { color: rgba(255, 255, 255, 0.9); text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 20px; transition: all 0.3s; }
-    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.2); color: #fff; }
+    .nav-links { display: flex; gap: 8px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { 
+      color: rgba(255, 255, 255, 0.9); 
+      text-decoration: none; 
+      font-weight: 600; 
+      padding: 6px 12px; 
+      border-radius: 16px; 
+      font-size: 0.88rem;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.25); color: #fff; }
 
-    .hero { max-width: 800px; margin: 0 auto; text-align: center; }
-    .hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
-    .hero p { font-size: 1.15rem; color: rgba(255, 255, 255, 0.9); font-weight: 300; }
+    .hero { max-width: 800px; margin: 1rem auto 0 auto; text-align: center; }
+    .hero h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.8rem; line-height: 1.2; }
+    .hero p { font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); font-weight: 300; }
 
     .main-container { max-width: 1100px; margin: -3rem auto 3rem auto; padding: 0 1.5rem; }
 
@@ -110,13 +121,13 @@
     .category-link { font-weight: 700; color: var(--primary); font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
 
     footer { background: #0f172a; color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; margin-top: 5rem; }
-    footer a { color: #cbd5e1; text-decoration: none; margin: 0 10px; }
+    footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
 
     @media (max-width: 850px) {
       .calc-card { grid-template-columns: 1fr; }
       header { padding-bottom: 3rem; }
-      .hero h1 { font-size: 2rem; }
-      nav { flex-direction: column; gap: 15px; }
+      .hero h1 { font-size: 1.8rem; }
+      nav { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -147,7 +158,6 @@
   </header>
 
   <main class="main-container">
-    <!-- CALCULADORA -->
     <section class="calc-card">
       <form id="salary-form" onsubmit="event.preventDefault(); calculateSalary();">
         <div class="form-group">
@@ -190,12 +200,9 @@
       </div>
     </section>
 
-    <!-- GUÍAS Y CATEGORÍAS PRINCIPALES -->
     <h2 class="section-title">Herramientas y Guías Laborales</h2>
 
     <div class="categories-grid">
-      
-      <!-- Categoría 1: Tramos IRPF -->
       <a href="tramos-irpf.html" class="category-card">
         <div>
           <div class="category-icon"><i class="fa-solid fa-percent"></i></div>
@@ -205,7 +212,6 @@
         <span class="category-link">Ver tablas de IRPF <i class="fa-solid fa-arrow-right"></i></span>
       </a>
 
-      <!-- Categoría 2: Finiquito e Indemnización -->
       <a href="finiquito.html" class="category-card">
         <div>
           <div class="category-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
@@ -215,7 +221,6 @@
         <span class="category-link">Guía de Finiquito <i class="fa-solid fa-arrow-right"></i></span>
       </a>
 
-      <!-- Categoría 3: Pagas Extraordinarias -->
       <a href="pagas-extra.html" class="category-card">
         <div>
           <div class="category-icon"><i class="fa-solid fa-calendar-check"></i></div>
@@ -225,7 +230,6 @@
         <span class="category-link">Ver diferencias <i class="fa-solid fa-arrow-right"></i></span>
       </a>
 
-      <!-- Categoría 4: Cotizaciones a la Seguridad Social -->
       <a href="cotizaciones.html" class="category-card">
         <div>
           <div class="category-icon"><i class="fa-solid fa-shield-halved"></i></div>
@@ -235,7 +239,6 @@
         <span class="category-link">Ver porcentajes <i class="fa-solid fa-arrow-right"></i></span>
       </a>
 
-      <!-- Categoría 5: Horas Extraordinarias -->
       <a href="horas-extra.html" class="category-card">
         <div>
           <div class="category-icon"><i class="fa-solid fa-clock"></i></div>
@@ -245,7 +248,6 @@
         <span class="category-link">Saber más <i class="fa-solid fa-arrow-right"></i></span>
       </a>
 
-      <!-- Categoría 6: Bajas Médicas -->
       <a href="baja-medica.html" class="category-card">
         <div>
           <div class="category-icon"><i class="fa-solid fa-kit-medical"></i></div>
@@ -255,7 +257,6 @@
         <span class="category-link">Calcular baja <i class="fa-solid fa-arrow-right"></i></span>
       </a>
 
-      <!-- Categoría 7: Noticias y Actualidad -->
       <a href="noticias.html" class="category-card">
         <div>
           <div class="category-icon"><i class="fa-solid fa-newspaper"></i></div>
@@ -264,7 +265,6 @@
         </div>
         <span class="category-link">Leer noticias <i class="fa-solid fa-arrow-right"></i></span>
       </a>
-
     </div>
   </main>
 
