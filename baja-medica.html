@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baja Médica e Incapacidad Temporal | Cuánto se cobra - CalculoNómina</title>
+  <meta name="description" content="Descubre cómo se calcula el cobro durante una baja médica por enfermedad común o accidente laboral en España. Porcentajes y tramos de subsidio por incapacidad." />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary: #ec4899;
+      --primary-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+      --bg-light: #f8fafc;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+    header {
+      background: var(--primary-gradient);
+      color: white;
+      padding: 1.5rem 2rem 3.5rem 2rem;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: white; text-decoration: none;
+    }
+    .logo i { background: rgba(255, 255, 255, 0.2); padding: 10px; border-radius: 12px; }
+
+    .nav-links { display: flex; gap: 15px; list-style: none; }
+    .nav-links a { color: rgba(255, 255, 255, 0.9); text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 20px; transition: all 0.3s; }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.2); color: #fff; }
+
+    .hero { max-width: 800px; margin: 0 auto; text-align: center; }
+    .hero h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.8rem; line-height: 1.2; }
+    .hero p { font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); font-weight: 300; }
+
+    .main-container { max-width: 1100px; margin: -2.5rem auto 3rem auto; padding: 0 1.5rem; }
+
+    .content-card {
+      background: white; border-radius: 24px; padding: 2.5rem; box-shadow: var(--card-shadow); margin-bottom: 2rem;
+    }
+
+    .content-card h2 { color: #0f172a; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+    .content-card h2 i { color: var(--primary); }
+    .content-card p { color: #334155; margin-bottom: 1.2rem; font-size: 1rem; }
+
+    .table-container { overflow-x: auto; margin: 1.5rem 0; }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th, td { padding: 14px 16px; border-bottom: 1px solid #e2e8f0; }
+    th { background: #f1f5f9; color: #1e293b; font-weight: 700; font-size: 0.95rem; }
+    td { font-size: 0.95rem; color: #334155; }
+    tr:hover { background-color: #f8fafc; }
+
+    .callout {
+      background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1.2rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0;
+    }
+    .callout p { color: #1e40af; margin-bottom: 0; font-weight: 500; }
+
+    footer { background: #0f172a; color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; margin-top: 5rem; }
+    footer a { color: #cbd5e1; text-decoration: none; margin: 0 10px; }
+
+    @media (max-width: 850px) {
+      header { padding-bottom: 2.5rem; }
+      .hero h1 { font-size: 1.8rem; }
+      nav { flex-direction: column; gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-calculator"></i>
+        <span>CalculoNómina</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tramos-irpf.html">Tramos IRPF</a></li>
+        <li><a href="finiquito.html">Finiquito</a></li>
+        <li><a href="baja-medica.html" class="active">Baja Médica</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <h1>Cálculo de Prestación por Baja Médica</h1>
+      <p>Aprende cuánto se cobra estando de baja por enfermedad común, accidente o contingencia profesional.</p>
+    </section>
+  </header>
+
+  <main class="main-container">
+    
+    <article class="content-card">
+      <h2><i class="fa-solid fa-kit-medical"></i> Baja por Enfermedad Común o Accidente No Laboral</h2>
+      <p>Cuando la baja no está causada por el trabajo, la retribución depende del número de días que el trabajador permanezca incapacitado:</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Periodo de la Baja</th>
+              <th>Porcentaje de la Base Reguladora</th>
+              <th>¿Quién lo paga?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Días 1 al 3</strong></td>
+              <td>0% (Sin cobro por ley)</td>
+              <td>Sin cobro (salvo convenio)</td>
+            </tr>
+            <tr>
+              <td><strong>Días 4 al 15</strong></td>
+              <td>60% de la base reguladora</td>
+              <td>A cargo de la Empresa</td>
+            </tr>
+            <tr>
+              <td><strong>Días 16 al 20</strong></td>
+              <td>60% de la base reguladora</td>
+              <td>A cargo del INSS / Mutua</td>
+            </tr>
+            <tr>
+              <td><strong>Día 21 en adelante</strong></td>
+              <td>75% de la base reguladora</td>
+              <td>A cargo del INSS / Mutua</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article class="content-card">
+      <h2><i class="fa-solid fa-user-nurse"></i> Baja por Accidente Laboral o Enfermedad Profesional</h2>
+      <p>Si la baja se debe a un motivo laboral, la protección económica es superior desde el primer día:</p>
+      
+      <ul style="margin-left: 1.5rem; color: #334155; line-height: 1.8;">
+        <li><strong>Día del accidente:</strong> Se cobra el 100% del salario ordinario a cargo de la empresa.</li>
+        <li><strong>Día 2 en adelante:</strong> Se cobra el <strong>75% de la base reguladora</strong> con cargo a la Mutua o la Seguridad Social.</li>
+      </ul>
+
+      <div class="callout">
+        <p><i class="fa-solid fa-circle-info"></i> <strong>Complementos de Convenio:</strong> Muchos Convenios Colectivos obligan a las empresas a "complementar" el subsidio hasta alcanzar el 100% del sueldo real del trabajador desde el primer día de baja.</p>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CalculoNómina - Todos los derechos reservados.</p>
+    <p style="margin-top: 10px;">
+      <a href="index.html">Inicio</a> | 
+      <a href="tramos-irpf.html">Tramos IRPF</a> | 
+      <a href="finiquito.html">Finiquito</a> | 
+      <a href="baja-medica.html">Baja Médica</a>
+    </p>
+  </footer>
+
+</body>
+</html>
