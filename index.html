@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculadora de Nómina 2026 | Sueldo Neto España</title>
-  <meta name="description" content="Calcula tu sueldo neto mensual y anual en España según tu salario bruto, tipo de contrato, retención de IRPF y comunidad autónoma. 100% gratuita y actualizada a la normativa laboral vigente." />
+  <meta name="description" content="Calcula tu sueldo neto mensual y anual en España según tu salario bruto, tipo de contrato, retención de IRPF y comunidad autónoma." />
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -57,7 +57,7 @@
 
     .calc-card {
       background: white; border-radius: 24px; padding: 2.5rem; box-shadow: var(--card-shadow);
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem;
     }
 
     .form-group { margin-bottom: 1.5rem; }
@@ -85,10 +85,30 @@
     .result-value { font-size: 2rem; font-weight: 800; color: #0f172a; }
     .highlight { color: #059669; }
 
-    .info-section { margin-top: 4rem; }
-    .info-card { background: white; border-radius: 20px; padding: 2rem; margin-bottom: 2rem; box-shadow: var(--card-shadow); }
-    .info-card h2 { color: #1e293b; margin-bottom: 1rem; font-size: 1.4rem; }
-    .info-card p { color: var(--text-muted); margin-bottom: 1rem; }
+    /* SECCIÓN DE CATEGORÍAS EN RECUADROS */
+    .section-title {
+      text-align: center; margin-bottom: 2rem; font-size: 1.8rem; color: #0f172a; font-weight: 800;
+    }
+
+    .categories-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;
+    }
+
+    .category-card {
+      background: white; border-radius: 20px; padding: 1.8rem; box-shadow: var(--card-shadow);
+      text-decoration: none; color: inherit; transition: all 0.3s ease; border: 1px solid #f1f5f9;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .category-card:hover {
+      transform: translateY(-5px); box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1); border-color: var(--primary);
+    }
+    .category-icon {
+      width: 50px; height: 50px; background: #fdf2f8; color: var(--primary); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.2rem;
+    }
+    .category-card h3 { font-size: 1.2rem; color: #1e293b; margin-bottom: 0.5rem; font-weight: 700; }
+    .category-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem; }
+    .category-link { font-weight: 700; color: var(--primary); font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
 
     footer { background: #0f172a; color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; margin-top: 5rem; }
     footer a { color: #cbd5e1; text-decoration: none; margin: 0 10px; }
@@ -122,6 +142,7 @@
   </header>
 
   <main class="main-container">
+    <!-- CALCULADORA -->
     <section class="calc-card">
       <form id="salary-form" onsubmit="event.preventDefault(); calculateSalary();">
         <div class="form-group">
@@ -164,21 +185,72 @@
       </div>
     </section>
 
-    <section class="info-section">
-      <article class="info-card">
-        <h2>¿Cómo calcular el sueldo neto a partir del bruto?</h2>
-        <p>Para saber cuánto vas a cobrar realmente al mes en tu cuenta bancaria, es necesario restar del salario bruto dos conceptos fundamentales:</p>
-        <ul style="margin-left: 1.5rem; color: var(--text-muted); margin-bottom: 1rem;">
-          <li><strong>Cotizaciones a la Seguridad Social:</strong> Un porcentaje fijo destinar al desempleo, formación y contingencias comunes (6,35% - 6,40%).</li>
-          <li><strong>Retención de IRPF:</strong> Impuesto progresivo que depende de tus ingresos totales y tu situación personal/familiar.</li>
-        </ul>
-      </article>
+    <!-- GUÍAS Y CATEGORÍAS PRINCIPALES -->
+    <h2 class="section-title">Herramientas y Guías Laborales</h2>
 
-      <article class="info-card">
-        <h2>Diferencia entre 12 y 14 pagas</h2>
-        <p>El salario anual percibido es el mismo. Con 14 pagas recibes dos pagas extraordinarias (generalmente en junio y diciembre), lo que reduce el importe mensual regular en comparación con un reparto en 12 mensualidades prorrateadas.</p>
-      </article>
-    </section>
+    <div class="categories-grid">
+      
+      <!-- Categoría 1: Tramos IRPF (Conectado a la página real) -->
+      <a href="tramos-irpf.html" class="category-card">
+        <div>
+          <div class="category-icon"><i class="fa-solid fa-percent"></i></div>
+          <h3>Tramos de IRPF</h3>
+          <p>Consulta las tablas de retención estatales y autonómicas para entender cómo tributa tu sueldo bruto.</p>
+        </div>
+        <span class="category-link">Ver tablas de IRPF <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Categoría 2: Finiquito e Indemnización -->
+      <a href="finiquito.html" class="category-card">
+        <div>
+          <div class="category-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+          <h3>Calculadora de Finiquito</h3>
+          <p>Aprende a calcular el finiquito y la indemnización que te corresponde por despido o baja voluntaria.</p>
+        </div>
+        <span class="category-link">Guía de Finiquito <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Categoría 3: Pagas Extraordinarias -->
+      <a href="pagas-extra.html" class="category-card">
+        <div>
+          <div class="category-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3>Pagas Extraordinarias</h3>
+          <p>Descubre las diferencias entre tener 12 pagas prorrateadas o 14 pagas anuales en tu contrato.</p>
+        </div>
+        <span class="category-link">Ver diferencias <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Categoría 4: Cotizaciones a la Seguridad Social -->
+      <a href="cotizaciones.html" class="category-card">
+        <div>
+          <div class="category-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Seguridad Social</h3>
+          <p>Conoce los porcentajes que aportas a contingencias comunes, desempleo y formación profesional.</p>
+        </div>
+        <span class="category-link">Ver porcentajes <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Categoría 5: Horas Extraordinarias -->
+      <a href="horas-extra.html" class="category-card">
+        <div>
+          <div class="category-icon"><i class="fa-solid fa-clock"></i></div>
+          <h3>Horas Extraordinarias</h3>
+          <p>Información detallada sobre cómo se pagan y cotizan las horas extras estructurales y de fuerza mayor.</p>
+        </div>
+        <span class="category-link">Saber más <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Categoría 6: Bajas Médicas -->
+      <a href="baja-medica.html" class="category-card">
+        <div>
+          <div class="category-icon"><i class="fa-solid fa-kit-medical"></i></div>
+          <h3>Bajas e Incapacidad</h3>
+          <p>Calcula cuánto cobras durante una baja por enfermedad común o accidente laboral.</p>
+        </div>
+        <span class="category-link">Calcular baja <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+    </div>
   </main>
 
   <footer>
@@ -212,3 +284,4 @@
 
 </body>
 </html>
+
