@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reducción de Jornada Laboral a 37,5 horas | CalculoNómina</title>
+  <meta name="description" content="Análisis sobre la reducción de la jornada laboral máxima en España a 37,5 horas semanales sin reducción salarial y su impacto en la nómina." />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary: #ec4899;
+      --primary-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+      --bg-light: #f8fafc;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+    header {
+      background: var(--primary-gradient);
+      color: white;
+      padding: 1.5rem 1.5rem 3.5rem 1.5rem;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: white; text-decoration: none;
+    }
+    .logo i { background: rgba(255, 255, 255, 0.2); padding: 8px 10px; border-radius: 12px; }
+
+    .nav-links { display: flex; gap: 8px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { 
+      color: rgba(255, 255, 255, 0.9); 
+      text-decoration: none; 
+      font-weight: 600; 
+      padding: 6px 12px; 
+      border-radius: 16px; 
+      font-size: 0.88rem;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.25); color: #fff; }
+
+    .hero { max-width: 800px; margin: 1rem auto 0 auto; text-align: center; }
+    .hero h1 { font-size: 2.1rem; font-weight: 800; margin-bottom: 0.8rem; line-height: 1.3; }
+
+    .main-container { max-width: 900px; margin: -2.5rem auto 3rem auto; padding: 0 1.5rem; }
+
+    .article-card {
+      background: white; border-radius: 24px; padding: 2.5rem; box-shadow: var(--card-shadow); margin-bottom: 2rem;
+    }
+
+    .article-meta { display: flex; gap: 15px; align-items: center; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .article-tag { background: #fdf2f8; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-weight: 700; }
+
+    .article-card h2 { color: #0f172a; margin: 1.8rem 0 0.8rem 0; font-size: 1.35rem; font-weight: 700; }
+    .article-card p { color: #334155; margin-bottom: 1.2rem; font-size: 1.05rem; line-height: 1.7; }
+    .article-card ul { margin-left: 1.5rem; color: #334155; margin-bottom: 1.5rem; line-height: 1.8; }
+
+    .article-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin: 1.5rem 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .callout {
+      background: #fdf2f8; border-left: 4px solid var(--primary); padding: 1.2rem; border-radius: 0 12px 12px 0; margin: 2rem 0;
+    }
+    .callout p { color: #831843; margin-bottom: 0; font-weight: 600; }
+
+    .btn-back {
+      display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 700; text-decoration: none; margin-bottom: 1.5rem;
+    }
+
+    footer { background: #0f172a; color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; margin-top: 5rem; }
+    footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
+
+    @media (max-width: 850px) {
+      header { padding-bottom: 2.5rem; }
+      .hero h1 { font-size: 1.7rem; }
+      nav { flex-direction: column; align-items: flex-start; }
+      .article-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-calculator"></i>
+        <span>CalculoNómina</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tramos-irpf.html">Tramos IRPF</a></li>
+        <li><a href="finiquito.html">Finiquito</a></li>
+        <li><a href="pagas-extra.html">Pagas Extra</a></li>
+        <li><a href="cotizaciones.html">Cotizaciones</a></li>
+        <li><a href="horas-extra.html">Horas Extra</a></li>
+        <li><a href="baja-medica.html">Baja Médica</a></li>
+        <li><a href="noticias.html" class="active">Noticias</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <h1>Actualidad y Normativa Laboral</h1>
+    </section>
+  </header>
+
+  <main class="main-container">
+    
+    <a href="noticias.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver a Noticias</a>
+
+    <article class="article-card">
+      <div class="article-meta">
+        <span class="article-tag">Reforma Laboral</span>
+        <span><i class="fa-regular fa-calendar"></i> 17 de Septiembre de 2026</span>
+      </div>
+
+      <h1 style="font-size: 1.8rem; color: #0f172a; margin-bottom: 1.2rem; line-height: 1.3;">
+        Reducción de la jornada laboral a 37,5 horas: ¿Cómo afecta a tu salario neto?
+      </h1>
+
+      <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80" alt="Reloj y jornada laboral de trabajo" class="article-img" />
+
+      <p>
+        La aplicación progresiva de la reducción de la jornada laboral ordinaria máxima en España establece el límite legal en <strong>37,5 horas semanales</strong>. La clave fundamental de esta reforma aprobada por el <a href="https://www.mites.gob.es/" target="_blank" rel="noopener" style="color: #ec4899; font-weight: 700; text-decoration: underline;">Ministerio de Trabajo y Economía Social</a> es que se realiza <strong>sin ninguna disminución del salario percibido</strong> por el empleado.
+      </p>
+
+      <h2>1. Incremento del precio por hora trabajada</h2>
+      <p>
+        Al reducir las horas de trabajo semanales manteniendo exactamente el mismo salario bruto anual, el valor de cada hora efectiva trabajada se incrementa. Esto beneficia directamente al trabajador en el cálculo de complementos y al valorar la hora ordinaria en su nómina.
+      </p>
+
+      <h2>2. Repercusión en las horas extraordinarias</h2>
+      <p>
+        Cualquier hora realizada por encima de la nueva jornada máxima de 37,5 horas semanales pasará automáticamente a considerarse como hora extraordinaria. Para saber cómo tributan estas horas adicionales en tu liquidación mensual, puedes consultar nuestra guía sobre <a href="horas-extra.html" style="color: #ec4899; font-weight: 700; text-decoration: underline;">Horas Extraordinarias y Cotizaciones</a>.
+      </p>
+
+      <h2>3. Registro horario obligatorio y sanciones</h2>
+      <p>
+        Las empresas están obligadas a adaptar de forma digital sus sistemas de control de presencia para garantizar el cumplimiento del nuevo tope de horas semanales, evitando así excesos no retribuidos de jornada.
+      </p>
+
+      <div class="callout">
+        <p>💡 <strong>¿Quieres comprobar el impacto en tu sueldo líquido?</strong> Puedes simular tu salario neto exacto utilizando nuestra <a href="index.html" style="color: #ec4899; text-decoration: underline;">Calculadora de Nómina Online</a>.</p>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CalculoNómina - Todos los derechos reservados.</p>
+    <p style="margin-top: 10px;">
+      <a href="index.html">Inicio</a> | 
+      <a href="tramos-irpf.html">Tramos IRPF</a> | 
+      <a href="finiquito.html">Finiquito</a> | 
+      <a href="pagas-extra.html">Pagas Extra</a> | 
+      <a href="cotizaciones.html">Cotizaciones</a> | 
+      <a href="horas-extra.html">Horas Extra</a> | 
+      <a href="baja-medica.html">Baja Médica</a> | 
+      <a href="noticias.html">Noticias</a>
+    </p>
+  </footer>
+
+</body>
+</html>
