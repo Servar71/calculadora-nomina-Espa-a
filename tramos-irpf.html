@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tramos de IRPF | Tablas y Retenciones - CalculoNómina</title>
+  <meta name="description" content="Consulta los tramos de IRPF estatales y autonómicos. Descubre cómo afectan tus circunstancias familiares a la retención de tu nómina." />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary: #ec4899;
+      --primary-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+      --bg-light: #f8fafc;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+    header {
+      background: var(--primary-gradient);
+      color: white;
+      padding: 1.5rem 2rem 3.5rem 2rem;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: white; text-decoration: none;
+    }
+    .logo i { background: rgba(255, 255, 255, 0.2); padding: 10px; border-radius: 12px; }
+
+    .nav-links { display: flex; gap: 15px; list-style: none; }
+    .nav-links a { color: rgba(255, 255, 255, 0.9); text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 20px; }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.2); color: #fff; }
+
+    .hero { max-width: 900px; margin: 0 auto; text-align: center; }
+    .hero h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.8rem; }
+    .hero p { font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); }
+
+    .main-container { max-width: 1000px; margin: -2rem auto 3rem auto; padding: 0 1.5rem; }
+
+    .content-card {
+      background: white; border-radius: 24px; padding: 2.5rem; box-shadow: var(--card-shadow); margin-bottom: 2rem;
+    }
+
+    .content-card h2 { color: #1e293b; margin-bottom: 1rem; font-size: 1.5rem; }
+    .content-card p { color: var(--text-muted); margin-bottom: 1.5rem; }
+
+    .irpf-table {
+      width: 100%; border-collapse: collapse; margin: 1.5rem 0; border-radius: 12px; overflow: hidden;
+    }
+    .irpf-table th, .irpf-table td { padding: 14px 18px; text-align: left; }
+    .irpf-table th { background: #f1f5f9; color: #334155; font-weight: 700; }
+    .irpf-table tr:nth-child(even) { background: #f8fafc; }
+    .irpf-table tr:hover { background: #f1f5f9; }
+
+    .badge {
+      background: #fdf2f8; color: #ec4899; padding: 4px 10px; border-radius: 12px; font-weight: 700; font-size: 0.85rem;
+    }
+
+    footer { background: #0f172a; color: #94a3b8; padding: 2rem; text-align: center; font-size: 0.9rem; margin-top: 4rem; }
+    footer a { color: #cbd5e1; text-decoration: none; margin: 0 10px; }
+
+    @media (max-width: 768px) {
+      nav { flex-direction: column; gap: 10px; }
+      .irpf-table { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-calculator"></i>
+        <span>CalculoNómina</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tramos-irpf.html" class="active">Tramos IRPF</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <h1>Tramos de IRPF y Retenciones</h1>
+      <p>Entiende cómo funciona el Impuesto sobre la Renta de las Personas Físicas de forma progresiva en tu salario.</p>
+    </section>
+  </header>
+
+  <main class="main-container">
+    <article class="content-card">
+      <h2>¿Cómo se aplican los tramos de IRPF en España?</h2>
+      <p>El IRPF es un impuesto <strong>progresivo</strong>. Esto significa que no pagas el mismo porcentaje por todo tu sueldo, sino por tramos o "escalones" salariales.</p>
+
+      <table class="irpf-table">
+        <thead>
+          <tr>
+            <th>Base Imponible (Sueldo Bruto)</th>
+            <th>Tipo Estatal</th>
+            <th>Tipo Medio Aprox.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Desde 0 € hasta 12.450 €</td>
+            <td>9,50%</td>
+            <td><span class="badge">19% Mínimo</span></td>
+          </tr>
+          <tr>
+            <td>De 12.450 € a 20.200 €</td>
+            <td>12,00%</td>
+            <td><span class="badge">24%</span></td>
+          </tr>
+          <tr>
+            <td>De 20.200 € a 35.200 €</td>
+            <td>15,00%</td>
+            <td><span class="badge">30%</span></td>
+          </tr>
+          <tr>
+            <td>De 35.200 € a 60.000 €</td>
+            <td>18,50%</td>
+            <td><span class="badge">37%</span></td>
+          </tr>
+          <tr>
+            <td>De 60.000 € a 300.000 €</td>
+            <td>22,50%</td>
+            <td><span class="badge">45%</span></td>
+          </tr>
+          <tr>
+            <td>Más de 300.000 €</td>
+            <td>24,50%</td>
+            <td><span class="badge">47% Máximo</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 2rem; background: #eff6ff; padding: 1.5rem; border-radius: 16px; border-left: 5px solid #3b82f6;">
+        <h3 style="color: #1e3a8a; margin-bottom: 0.5rem; font-size: 1.1rem;"><i class="fa-solid fa-circle-info"></i> Mínimo Personal y Familiar</h3>
+        <p style="color: #1e40af; margin: 0; font-size: 0.95rem;">
+          Los primeros 5.550 € anuales ganados por cualquier trabajador están exentos de tributación por el mínimo personal exento. Este importe aumenta si tienes hijos a cargo, mayores de 65 años o personas con discapacidad en la unidad familiar.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CalculoNómina - Todos los derechos reservados.</p>
+    <p style="margin-top: 10px;">
+      <a href="index.html">Inicio</a> | 
+      <a href="tramos-irpf.html">Tramos IRPF</a>
+    </p>
+  </footer>
+
+</body>
+</html>
