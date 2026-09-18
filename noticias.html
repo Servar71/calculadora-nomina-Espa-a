@@ -25,7 +25,7 @@
     header {
       background: var(--primary-gradient);
       color: white;
-      padding: 1.5rem 2rem 3.5rem 2rem;
+      padding: 1.5rem 1.5rem 3.5rem 1.5rem;
       border-bottom-left-radius: 30px;
       border-bottom-right-radius: 30px;
       box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
@@ -37,19 +37,30 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .logo {
-      font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: white; text-decoration: none;
+      font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: white; text-decoration: none;
     }
-    .logo i { background: rgba(255, 255, 255, 0.2); padding: 10px; border-radius: 12px; }
+    .logo i { background: rgba(255, 255, 255, 0.2); padding: 8px 10px; border-radius: 12px; }
 
-    .nav-links { display: flex; gap: 15px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { color: rgba(255, 255, 255, 0.9); text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 20px; transition: all 0.3s; }
-    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.2); color: #fff; }
+    .nav-links { display: flex; gap: 8px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { 
+      color: rgba(255, 255, 255, 0.9); 
+      text-decoration: none; 
+      font-weight: 600; 
+      padding: 6px 12px; 
+      border-radius: 16px; 
+      font-size: 0.88rem;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.25); color: #fff; }
 
-    .hero { max-width: 800px; margin: 0 auto; text-align: center; }
+    .hero { max-width: 800px; margin: 1rem auto 0 auto; text-align: center; }
     .hero h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.8rem; line-height: 1.2; }
     .hero p { font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); font-weight: 300; }
 
@@ -62,7 +73,7 @@
     .news-card {
       background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--card-shadow);
       display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #f1f5f9;
-      text-decoration: none; color: inherit; transition: all 0.3s ease;
+      text-decoration: none; color: inherit; transition: all 0.3s ease; cursor: pointer;
     }
     .news-card:hover {
       transform: translateY(-5px); box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1); border-color: var(--primary);
@@ -79,12 +90,12 @@
     .read-more { font-weight: 700; color: var(--primary); font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
 
     footer { background: #0f172a; color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; margin-top: 5rem; }
-    footer a { color: #cbd5e1; text-decoration: none; margin: 0 10px; }
+    footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
 
     @media (max-width: 850px) {
       header { padding-bottom: 2.5rem; }
       .hero h1 { font-size: 1.8rem; }
-      nav { flex-direction: column; gap: 15px; }
+      nav { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -100,6 +111,10 @@
         <li><a href="index.html">Inicio</a></li>
         <li><a href="tramos-irpf.html">Tramos IRPF</a></li>
         <li><a href="finiquito.html">Finiquito</a></li>
+        <li><a href="pagas-extra.html">Pagas Extra</a></li>
+        <li><a href="cotizaciones.html">Cotizaciones</a></li>
+        <li><a href="horas-extra.html">Horas Extra</a></li>
+        <li><a href="baja-medica.html">Baja Médica</a></li>
         <li><a href="noticias.html" class="active">Noticias</a></li>
       </ul>
     </nav>
@@ -133,10 +148,13 @@
       <a href="index.html">Inicio</a> | 
       <a href="tramos-irpf.html">Tramos IRPF</a> | 
       <a href="finiquito.html">Finiquito</a> | 
+      <a href="pagas-extra.html">Pagas Extra</a> | 
+      <a href="cotizaciones.html">Cotizaciones</a> | 
+      <a href="horas-extra.html">Horas Extra</a> | 
+      <a href="baja-medica.html">Baja Médica</a> | 
       <a href="noticias.html">Noticias</a>
     </p>
   </footer>
 
 </body>
 </html>
-
