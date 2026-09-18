@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noticias y Actualidad Laboral 2026 | CalculoNómina</title>
-  <meta name="description" content="Novedades sobre el Salario Mínimo Interprofesional, IRPF, cotizaciones a la Seguridad Social y cambios legislativos en la nómina en España." />
+  <meta name="description" content="Últimas noticias y novedades sobre el Salario Mínimo Interprofesional, IRPF, cotizaciones a la Seguridad Social y legislación en España." />
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -45,7 +45,7 @@
     }
     .logo i { background: rgba(255, 255, 255, 0.2); padding: 10px; border-radius: 12px; }
 
-    .nav-links { display: flex; gap: 15px; list-style: none; }
+    .nav-links { display: flex; gap: 15px; list-style: none; flex-wrap: wrap; }
     .nav-links a { color: rgba(255, 255, 255, 0.9); text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 20px; transition: all 0.3s; }
     .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.2); color: #fff; }
 
@@ -62,6 +62,10 @@
     .news-card {
       background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--card-shadow);
       display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #f1f5f9;
+      text-decoration: none; color: inherit; transition: all 0.3s ease;
+    }
+    .news-card:hover {
+      transform: translateY(-5px); box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1); border-color: var(--primary);
     }
 
     .news-tag {
@@ -72,6 +76,7 @@
     .news-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; }
     .news-card h2 { font-size: 1.3rem; color: #0f172a; margin-bottom: 0.8rem; font-weight: 700; line-height: 1.3; }
     .news-card p { color: #334155; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6; }
+    .read-more { font-weight: 700; color: var(--primary); font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
 
     footer { background: #0f172a; color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; margin-top: 5rem; }
     footer a { color: #cbd5e1; text-decoration: none; margin: 0 10px; }
@@ -109,34 +114,15 @@
     <div class="news-grid">
 
       <!-- Noticia 1 -->
-      <article class="news-card">
+      <a href="noticia-smi-2026.html" class="news-card">
         <div>
-          <span class="news-tag">Legislación</span>
-          <div class="news-date"><i class="fa-regular fa-calendar"></i> Actualizado recientemente</div>
-          <h2>Subida del Salario Mínimo Interprofesional (SMI) en 2026</h2>
-          <p>El SMI se sitúa en 1.221 euros mensuales distribuidos en 14 pagas (17.094 € brutos anuales), lo que supone una mejora directa en el sueldo base de miles de trabajadores.</p>
+          <span class="news-tag">Salario Mínimo</span>
+          <div class="news-date"><i class="fa-regular fa-calendar"></i> 17 de Septiembre de 2026</div>
+          <h2>Subida del Salario Mínimo Interprofesional (SMI) en 2026: ¿Cómo afecta a tu nómina?</h2>
+          <p>El SMI se sitúa en 1.221 euros mensuales en 14 pagas. Descubre el análisis completo de las retenciones y bases de cotización.</p>
         </div>
-      </article>
-
-      <!-- Noticia 2 -->
-      <article class="news-card">
-        <div>
-          <span class="news-tag">Cotizaciones</span>
-          <div class="news-date"><i class="fa-regular fa-calendar"></i> Actualizado recientemente</div>
-          <h2>Aumento del tipo del Mecanismo de Equidad Intergeneracional (MEI)</h2>
-          <p>El MEI pasa a ser del 0,9% en 2026. La empresa asume un 0,75% y el trabajador un 0,15% adicional en su deducción mensual para reforzar el sistema público de pensiones.</p>
-        </div>
-      </article>
-
-      <!-- Noticia 3 -->
-      <article class="news-card">
-        <div>
-          <span class="news-tag">IRPF</span>
-          <div class="news-date"><i class="fa-regular fa-calendar"></i> Actualizado recientemente</div>
-          <h2>Ajustes en la exención del IRPF para rentas bajas</h2>
-          <p>Revisa cómo influye el mínimo personal exento en las nóminas más ajustadas y cuándo es obligatorio presentar la Declaración de la Renta para solicitar devoluciones.</p>
-        </div>
-      </article>
+        <span class="read-more">Leer noticia completa <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
 
     </div>
   </main>
@@ -153,3 +139,4 @@
 
 </body>
 </html>
+
