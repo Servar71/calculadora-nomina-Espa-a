@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Finiquito e Indemnización 2026 | Guía Laboral España</title>
+  <meta name="description" content="Aprende a calcular el finiquito y la indemnización por despido o baja voluntaria en España. Guía paso a paso sobre vacaciones no disfrutadas, pagas extra y conceptos liquidables." />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary: #ec4899;
+      --primary-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+      --bg-light: #f8fafc;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+    header {
+      background: var(--primary-gradient);
+      color: white;
+      padding: 1.5rem 2rem 3.5rem 2rem;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: white; text-decoration: none;
+    }
+    .logo i { background: rgba(255, 255, 255, 0.2); padding: 10px; border-radius: 12px; }
+
+    .nav-links { display: flex; gap: 15px; list-style: none; }
+    .nav-links a { color: rgba(255, 255, 255, 0.9); text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 20px; transition: all 0.3s; }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.2); color: #fff; }
+
+    .hero { max-width: 800px; margin: 0 auto; text-align: center; }
+    .hero h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.8rem; line-height: 1.2; }
+    .hero p { font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); font-weight: 300; }
+
+    .main-container { max-width: 1100px; margin: -2.5rem auto 3rem auto; padding: 0 1.5rem; }
+
+    .content-card {
+      background: white; border-radius: 24px; padding: 2.5rem; box-shadow: var(--card-shadow); margin-bottom: 2rem;
+    }
+
+    .content-card h2 { color: #0f172a; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+    .content-card h2 i { color: var(--primary); }
+    .content-card p { color: #334155; margin-bottom: 1.2rem; font-size: 1rem; }
+
+    .concept-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;
+    }
+
+    .concept-box {
+      background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.5rem;
+    }
+    .concept-box h3 { font-size: 1.1rem; color: #1e293b; margin-bottom: 0.5rem; font-weight: 700; }
+    .concept-box p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0; }
+
+    .table-container { overflow-x: auto; margin: 1.5rem 0; }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th, td { padding: 14px 16px; border-bottom: 1px solid #e2e8f0; }
+    th { background: #f1f5f9; color: #1e293b; font-weight: 700; font-size: 0.95rem; }
+    td { font-size: 0.95rem; color: #334155; }
+    tr:hover { background-color: #f8fafc; }
+
+    .badge {
+      display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 700;
+    }
+    .badge-pink { background: #fce7f3; color: #9d174d; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+
+    .callout {
+      background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1.2rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0;
+    }
+    .callout p { color: #1e40af; margin-bottom: 0; font-weight: 500; }
+
+    footer { background: #0f172a; color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; margin-top: 5rem; }
+    footer a { color: #cbd5e1; text-decoration: none; margin: 0 10px; }
+
+    @media (max-width: 850px) {
+      header { padding-bottom: 2.5rem; }
+      .hero h1 { font-size: 1.8rem; }
+      nav { flex-direction: column; gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-calculator"></i>
+        <span>CalculoNómina</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="tramos-irpf.html">Tramos IRPF</a></li>
+        <li><a href="finiquito.html" class="active">Finiquito</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <h1>Cálculo de Finiquito e Indemnización</h1>
+      <p>Guía completa sobre los conceptos que deben pagarte al finalizar una relación laboral en España.</p>
+    </section>
+  </header>
+
+  <main class="main-container">
+    
+    <article class="content-card">
+      <h2><i class="fa-solid fa-file-invoice-dollar"></i> ¿Qué es el Finiquito y qué debe incluir?</h2>
+      <p>El finiquito es el documento de propuesta de liquidación que la empresa entrega al trabajador cuando finaliza el contrato de trabajo, independientemente del motivo (despido, baja voluntaria, fin de contrato o jubilación).</p>
+      
+      <div class="concept-grid">
+        <div class="concept-box">
+          <h3>1. Días trabajados del mes</h3>
+          <p>La parte proporcional del salario devengado durante el último mes trabajado y que aún no ha sido abonada.</p>
+        </div>
+        <div class="concept-box">
+          <h3>2. Vacaciones no disfrutadas</h3>
+          <p>Días de vacaciones generados durante el año que no llegaste a disfrutar (se pagan a 2,5 días por mes trabajado).</p>
+        </div>
+        <div class="concept-box">
+          <h3>3. Parte proporcional de pagas extra</h3>
+          <p>Si tus pagas no están prorrateadas, te corresponde la parte generada de la paga de verano o navidad.</p>
+        </div>
+        <div class="concept-box">
+          <h3>4. Horas extra y complementos</h3>
+          <p>Cualquier hora extraordinaria realizada o complemento pendiente de liquidar antes del cese.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="content-card">
+      <h2><i class="fa-solid fa-scale-balanced"></i> Tipos de Indemnización por Despido (2026)</h2>
+      <p>A diferencia del finiquito (que siempre se cobra), la **indemnización** depende exclusivamente de la causa de la extinción del contrato laboral:</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de Extinción</th>
+              <th>Días por Año Trab.</th>
+              <th>Límite Máximo</th>
+              <th>¿Tiene Finiquito?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Baja Voluntaria / Dimisión</strong></td>
+              <td>0 días</td>
+              <td>Sin indemnización</td>
+              <td><span class="badge badge-pink">Sí, siempre</span></td>
+            </tr>
+            <tr>
+              <td><strong>Fin de Contrato Temporal</strong></td>
+              <td>12 días</td>
+              <td>Sin límite expreso</td>
+              <td><span class="badge badge-pink">Sí, siempre</span></td>
+            </tr>
+            <tr>
+              <td><strong>Despido Objetivo</strong> (Causas econ. o téc.)</td>
+              <td>20 días</td>
+              <td>12 mensualidades</td>
+              <td><span class="badge badge-pink">Sí, siempre</span></td>
+            </tr>
+            <tr>
+              <td><strong>Despido Improcedente</strong></td>
+              <td>33 días</td>
+              <td>24 mensualidades</td>
+              <td><span class="badge badge-pink">Sí, siempre</span></td>
+            </tr>
+            <tr>
+              <td><strong>Despido Disciplinario Procedente</strong></td>
+              <td>0 días</td>
+              <td>Sin indemnización</td>
+              <td><span class="badge badge-pink">Sí, siempre</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <p><i class="fa-solid fa-triangle-exclamation"></i> <strong>Consejo importante:</strong> Si firmas el finiquito y no estás conforme con las cantidades o con el despido, escribe siempre junto a tu firma la frase <em>"No conforme"</em> y añade la fecha actual antes de entregar el papel.</p>
+      </div>
+    </article>
+
+    <article class="content-card">
+      <h2><i class="fa-solid fa-calculator"></i> Ejemplo Práctico de Cálculo de Finiquito</h2>
+      <p>Supongamos un trabajador con un sueldo bruto de 24.000 €/año en 12 pagas que se da de baja voluntaria el 15 de junio, habiendo acumulado 10 días de vacaciones no disfrutadas:</p>
+      
+      <ul style="margin-left: 1.5rem; color: #334155; line-height: 1.8;">
+        <li><strong>Salario diario:</strong> 24.000 € / 365 días = 65,75 €/día.</li>
+        <li><strong>Días del mes trabajado (15 días):</strong> 15 × 65,75 € = <strong>986,25 €</strong>.</li>
+        <li><strong>Vacaciones pendientes (10 días):</strong> 10 × 65,75 € = <strong>657,50 €</strong>.</li>
+        <li><strong>Total Finiquito Bruto:</strong> 986,25 € + 657,50 € = <strong>1.643,75 €</strong> (a deducir IRPF y Seguridad Social).</li>
+      </ul>
+    </article>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CalculoNómina - Todos los derechos reservados.</p>
+    <p style="margin-top: 10px;">
+      <a href="index.html">Inicio</a> | 
+      <a href="tramos-irpf.html">Tramos IRPF</a> | 
+      <a href="finiquito.html">Finiquito</a>
+    </p>
+  </footer>
+
+</body>
+</html>
