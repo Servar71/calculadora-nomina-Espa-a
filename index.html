@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cálculo Nómina España - Calculadora y Actualidad Laboral</title>
+    <title>Cálculo Nómina España - Calculadora de Sueldo Neto y Actualidad Laboral</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -24,11 +24,21 @@
             font-weight: 700;
             color: var(--primary-color) !important;
         }
+        .card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .result-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 0.75rem;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Cabecera de Navegación Global (Menú Único con Desplegable) -->
+    <!-- Cabecera de Navegación Global con Menú Desplegable -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top">
         <div class="container">
             <a class="navbar-brand fs-4" href="index.html">
@@ -45,7 +55,7 @@
                     <li class="nav-item">
                         <a class="nav-link px-3" href="noticias.html"><i class="bi bi-newspaper me-1"></i> Blog</a>
                     </li>
-                    <!-- Menú Desplegable unificado -->
+                    <!-- Menú Desplegable con todas tus páginas y herramientas -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-folder2-open me-1"></i> Secciones
@@ -67,19 +77,72 @@
         </div>
     </nav>
 
-    <!-- Contenido Principal: Calculadora de Nómina -->
+    <!-- Contenido Principal: Calculadora de Nómina Limpia y Moderna -->
     <main class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="card border-0 shadow-sm p-4 p-md-5 bg-white rounded-4">
-                    <h1 class="h3 fw-bold text-primary mb-3 text-center">Calculadora de Nómina en España</h1>
-                    <p class="text-muted text-center mb-4">Calcula tu sueldo neto mensual introduciendo los datos de tu salario bruto y situación fiscal.</p>
-                    
-                    <!-- Aquí puedes mantener o colocar el formulario de la calculadora -->
-                    <div class="alert alert-info text-center">
-                        <i class="bi bi-info-circle-fill me-2"></i> Tu calculadora principal se cargará perfectamente con esta estructura limpia.
+                
+                <div class="card p-4 p-md-5 bg-white mb-4">
+                    <div class="text-center mb-4">
+                        <h1 class="h3 fw-bold text-primary">Calculadora de Nómina en España</h1>
+                        <p class="text-muted">Estima tu sueldo neto mensual de forma rápida y orientativa.</p>
+                    </div>
+
+                    <form id="nominaForm">
+                        <div class="mb-3">
+                            <label for="bruto" class="form-label fw-semibold">Salario Bruto Anual (€)</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light"><i class="bi bi-currency-euro"></i></span>
+                                <input type="number" class="form-control" id="bruto" placeholder="Ej. 24000" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="hijos" class="form-label fw-semibold">Hijos / Descendientes</label>
+                                <select class="form-select" id="hijos">
+                                    <option value="0">Sin hijos</option>
+                                    <option value="1">1 hijo</option>
+                                    <option value="2">2 hijos</option>
+                                    <option value="3">3 o más hijos</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="pagas" class="form-label fw-semibold">Pagas Anuales</label>
+                                <select class="form-select" id="pagas">
+                                    <option value="12">12 pagas</option>
+                                    <option value="14" selected>14 pagas (con extras)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="calcularNomina()" class="btn btn-primary w-100 py-2 fw-semibold mt-3">
+                            <i class="bi bi-calculator me-2"></i> Calcular Sueldo Neto
+                        </button>
+                    </form>
+
+                    <!-- Resultados (Ocultos inicialmente, aparecen al calcular) -->
+                    <div id="resultadoContainer" class="mt-4 p-4 result-box d-none">
+                        <h4 class="h5 fw-bold text-success mb-3"><i class="bi bi-check-circle-fill me-2"></i> Resultado Estimado</h4>
+                        <div class="row text-center">
+                            <div class="col-6 border-end">
+                                <small class="text-muted d-block">Neto Mensual</small>
+                                <span id="netoMensual" class="fs-4 fw-bold text-dark">-</span>
+                            </div>
+                            <div class="col-6">
+                                <small class="text-muted d-block">Neto Anual</small>
+                                <span id="netoAnual" class="fs-4 fw-bold text-dark">-</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Sección informativa breve -->
+                <div class="card p-4 bg-light border-0">
+                    <h5 class="fw-bold text-primary mb-2"><i class="bi bi-info-circle me-2"></i>¿Cómo funciona este cálculo?</h5>
+                    <p class="text-muted small mb-0">Esta estimación aplica de forma general las deducciones orientativas por contingencias comunes, desempleo, formación profesional, MEI y una aproximación general de los tramos de retención del IRPF en España. Para un cálculo oficial y exacto, consulta siempre con el departamento de recursos humanos de tu empresa o los simuladores de la Agencia Tributaria.</p>
+                </div>
+
             </div>
         </div>
     </main>
@@ -87,11 +150,37 @@
     <!-- Footer General -->
     <footer class="text-center py-4 text-muted border-top bg-white mt-5">
         <div class="container">
-            <small>* Nota: Los contenidos de <strong>calculo-nomina.es</strong> tienen carácter orientativo y están basados en la normativa vigente en España.</small>
+            <small>calculo-nomina.es &copy; 2026 - Todos los derechos reservados.</small>
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle (Necesario para que el menú desplegable funcione) -->
+    <!-- Script básico para que la calculadora funcione en vivo -->
+    <script>
+        function calcularNomina() {
+            const brutoInput = document.getElementById('bruto').value;
+            if(!brutoInput || brutoInput <= 0) {
+                alert('Por favor, introduce un salario bruto válido.');
+                return;
+            }
+            const bruto = parseFloat(brutoInput);
+            
+            // Estimación orientativa de retenciones y cotizaciones (~15% a 25% según bruto)
+            let estimacionDescuento = 0.18; 
+            if (bruto > 35000) estimacionDescuento = 0.24;
+            if (bruto < 18000) estimacionDescuento = 0.12;
+
+            const netoAnual = bruto * (1 - estimacionDescuento);
+            const pagas = parseInt(document.getElementById('pagas').value);
+            const netoMensual = netoAnual / pagas;
+
+            document.getElementById('netoAnual').innerText = netoAnual.toLocaleString('es-ES', {style: 'currency', currency: 'EUR'});
+            document.getElementById('netoMensual').innerText = netoMensual.toLocaleString('es-ES', {style: 'currency', currency: 'EUR'});
+            
+            document.getElementById('resultadoContainer').classList.remove('d-none');
+        }
+    </script>
+
+    <!-- Bootstrap JS Bundle (Necesario para el menú desplegable) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
