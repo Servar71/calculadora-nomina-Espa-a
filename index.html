@@ -1,309 +1,294 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculadora de Nómina 2026 | Sueldo Neto España</title>
-  <meta name="description" content="Calcula tu sueldo neto mensual y anual en España según tu salario bruto, tipo de contrato y retenciones." />
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
-  <style>
-    :root {
-      --primary: #ec4899;
-      --primary-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
-      --bg-light: #f8fafc;
-      --text-dark: #0f172a;
-      --text-muted: #64748b;
-      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
-
-    header {
-      background: var(--primary-gradient);
-      color: white;
-      padding: 1.5rem 1.5rem 4rem 1.5rem;
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
-      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 1.5rem;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .logo {
-      font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: white; text-decoration: none;
-    }
-    .logo i { background: rgba(255, 255, 255, 0.2); padding: 8px 10px; border-radius: 12px; }
-
-    .nav-links { display: flex; gap: 8px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { 
-      color: rgba(255, 255, 255, 0.9); 
-      text-decoration: none; 
-      font-weight: 600; 
-      padding: 6px 12px; 
-      border-radius: 16px; 
-      font-size: 0.88rem;
-      transition: all 0.3s;
-      white-space: nowrap;
-    }
-    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.25); color: #fff; }
-
-    .hero { max-width: 800px; margin: 1rem auto 0 auto; text-align: center; }
-    .hero h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.8rem; line-height: 1.2; }
-    .hero p { font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); font-weight: 300; }
-
-    .main-container { max-width: 1100px; margin: -3rem auto 3rem auto; padding: 0 1.5rem; }
-
-    .calc-card {
-      background: white; border-radius: 24px; padding: 2.5rem; box-shadow: var(--card-shadow);
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem;
-    }
-
-    .form-group { margin-bottom: 1.5rem; }
-    label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: #334155; font-size: 0.95rem; }
-    input, select {
-      width: 100%; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 12px;
-      font-size: 1rem; outline: none; transition: border-color 0.2s;
-    }
-    input:focus, select:focus { border-color: var(--primary); }
-
-    .btn-submit {
-      width: 100%; background: var(--primary-gradient); color: white; border: none;
-      padding: 14px; border-radius: 12px; font-weight: 700; font-size: 1.05rem; cursor: pointer;
-      box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3); transition: transform 0.2s;
-    }
-    .btn-submit:hover { transform: translateY(-2px); }
-
-    .results-panel {
-      background: #f8fafc; border-radius: 16px; padding: 2rem; border: 1px solid #e2e8f0;
-      display: flex; flex-direction: column; justify-content: center;
-    }
-    .result-item { margin-bottom: 1.5rem; }
-    .result-item:last-child { margin-bottom: 0; }
-    .result-label { font-size: 0.9rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
-    .result-value { font-size: 2rem; font-weight: 800; color: #0f172a; }
-    .highlight { color: #059669; }
-
-    .section-title {
-      text-align: center; margin-bottom: 2rem; font-size: 1.8rem; color: #0f172a; font-weight: 800;
-    }
-
-    .categories-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;
-    }
-
-    .category-card {
-      background: white; border-radius: 20px; padding: 1.8rem; box-shadow: var(--card-shadow);
-      text-decoration: none; color: inherit; transition: all 0.3s ease; border: 1px solid #f1f5f9;
-      display: flex; flex-direction: column; justify-content: space-between;
-    }
-    .category-card:hover {
-      transform: translateY(-5px); box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1); border-color: var(--primary);
-    }
-    .category-icon {
-      width: 50px; height: 50px; background: #fdf2f8; color: var(--primary); border-radius: 14px;
-      display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.2rem;
-    }
-    .category-card h3 { font-size: 1.2rem; color: #1e293b; margin-bottom: 0.5rem; font-weight: 700; }
-    .category-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem; }
-    .category-link { font-weight: 700; color: var(--primary); font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
-
-    footer { background: #0f172a; color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; margin-top: 5rem; }
-    footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
-
-    @media (max-width: 850px) {
-      .calc-card { grid-template-columns: 1fr; }
-      header { padding-bottom: 3rem; }
-      .hero h1 { font-size: 1.8rem; }
-      nav { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Nómina y Actualidad Laboral | calculo-nomina.es</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --accent-color: #059669;
+            --bg-body: #f8fafc;
+        }
+        body {
+            background-color: var(--bg-body);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #1e293b;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        .card-custom {
+            border: none;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border-radius: 1rem;
+        }
+        .net-salary-card {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white;
+            border-radius: 0.75rem;
+        }
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border: none;
+            font-weight: 600;
+            padding: 0.75rem;
+        }
+        .btn-primary-custom:hover {
+            background-color: #1e40af;
+        }
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+        }
+        .nav-pills .nav-link {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .badge-category {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="index.html" class="logo">
-        <i class="fa-solid fa-calculator"></i>
-        <span>CalculoNómina</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Inicio</a></li>
-        <li><a href="tramos-irpf.html">Tramos IRPF</a></li>
-        <li><a href="finiquito.html">Finiquito</a></li>
-        <li><a href="pagas-extra.html">Pagas Extra</a></li>
-        <li><a href="cotizaciones.html">Cotizaciones</a></li>
-        <li><a href="horas-extra.html">Horas Extra</a></li>
-        <li><a href="baja-medica.html">Baja Médica</a></li>
-        <li><a href="noticias.html">Noticias</a></li>
-      </ul>
+    <!-- Cabecera de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand fs-4" href="#"><i class="bi bi-calculator-fill text-primary me-2"></i>calculo<span class="text-success">-</span>nomina.es</a>
+            
+            <!-- Pestañas de Navegación Interna (Calculadora / Blog) -->
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active rounded-pill px-3 me-2" id="pills-calc-tab" data-bs-toggle="pill" data-bs-target="#pills-calc" type="button" role="tab"><i class="bi bi-sliders me-1"></i> Calculadora</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-pill px-3" id="pills-blog-tab" data-bs-toggle="pill" data-bs-target="#pills-blog" type="button" role="tab"><i class="bi bi-newspaper me-1"></i> Blog y Noticias</button>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <section class="hero">
-      <h1>Calculadora de Nómina Neto 2026</h1>
-      <p>Calcula de forma exacta tu sueldo líquido mensual y retenciones de IRPF en España.</p>
-    </section>
-  </header>
+    <!-- Contenido Principal con Pestañas -->
+    <main class="container my-5">
+        <div class="tab-content" id="pills-tabContent">
+            
+            <!-- SECCIÓN 1: LA CALCULADORA -->
+            <div class="tab-pane fade show active" id="pills-calc" role="tabpanel" aria-labelledby="pills-calc-tab">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bold text-dark">Calculadora de Sueldo Neto</h1>
+                    <p class="text-muted">Calcula tu salario neto mensual de forma rápida, transparente y adaptada a la legislación vigente.</p>
+                </div>
 
-  <main class="main-container">
-    <section class="calc-card">
-      <form id="salary-form" onsubmit="event.preventDefault(); calculateSalary();">
-        <div class="form-group">
-          <label for="gross-salary">Salario Bruto Anual (€)</label>
-          <input type="number" id="gross-salary" placeholder="Ej: 28000" required value="25000">
+                <div class="row g-4 justify-content-center">
+                    <!-- Formulario de Entrada -->
+                    <div class="col-lg-5">
+                        <div class="card card-custom p-4 h-100 bg-white">
+                            <h2 class="h5 mb-4 text-primary"><i class="bi bi-sliders me-2"></i>Datos de tu Nómina</h2>
+                            
+                            <form id="nominaForm">
+                                <div class="mb-3">
+                                    <label for="bruto" class="form-label fw-semibold">
+                                        Salario Bruto Anual (€)
+                                        <i class="bi bi-question-circle text-muted" data-bs-toggle="tooltip" title="Suma total de tus ingresos brutos antes de cualquier deducción fiscal o de seguridad social."></i>
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-currency-euro"></i></span>
+                                        <input type="number" class="form-control" id="bruto" placeholder="Ej. 24000" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="pagas" class="form-label fw-semibold">
+                                        Número de Pagas
+                                        <i class="bi bi-question-circle text-muted" data-bs-toggle="tooltip" title="Generalmente 12 pagas o 14 pagas (incluyendo pagas extra)."></i>
+                                    </label>
+                                    <select class="form-select" id="pagas">
+                                        <option value="12">12 Pagas</option>
+                                        <option value="14" selected>14 Pagas</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="situacion" class="form-label fw-semibold">
+                                        Situación Familiar (IRPF)
+                                        <i class="bi bi-question-circle text-muted" data-bs-toggle="tooltip" title="Tu situación personal y familiar afecta directamente al tipo de retención aplicada."></i>
+                                    </label>
+                                    <select class="form-select" id="situacion">
+                                        <option value="1">Soltero / Sin hijos o discapacidad</option>
+                                        <option value="2">Casado con dos ingresos / Con hijos</option>
+                                        <option value="3">Otros casos especiales</option>
+                                    </select>
+                                </div>
+
+                                <button type="button" onclick="calcularNomina()" class="btn btn-primary-custom w-100 text-white rounded-pill shadow-sm mt-3">
+                                    <i class="bi bi-calculator me-2"></i>Calcular Sueldo Neto
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Panel de Resultados (Dashboard) -->
+                    <div class="col-lg-5">
+                        <div class="card card-custom p-4 h-100 bg-white d-flex flex-column justify-content-between">
+                            <div>
+                                <h2 class="h5 mb-4 text-primary"><i class="bi bi-file-earmark-text me-2"></i>Desglose de Resultados</h2>
+                                
+                                <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                                    <span class="text-muted">Salario Bruto Mensual:</span>
+                                    <span class="fw-bold" id="resBrutoMensual">-- €</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2 pb-2 border-bottom text-danger">
+                                    <span>Seguridad Social (Trabajador):</span>
+                                    <span class="fw-bold" id="resSS">-- €</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3 pb-2 border-bottom text-danger">
+                                    <span>Retención IRPF (Estimada):</span>
+                                    <span class="fw-bold" id="resIRPF">-- €</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="net-salary-card p-3 text-center my-3 shadow-sm">
+                                    <small class="text-uppercase tracking-wider opacity-75">Salario Neto Mensual</small>
+                                    <div class="display-6 fw-bold my-1" id="resNetoMensual">0,00 €</div>
+                                    <small class="opacity-75" id="resNetoAnual">Neto Anual: 0,00 €</small>
+                                </div>
+
+                                <div class="text-center mt-3">
+                                    <p class="text-muted small mb-0">
+                                        <i class="bi bi-shield-lock-fill text-success"></i> <strong>Proceso seguro:</strong> Tus datos se calculan en tu navegador y no se almacenan.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: BLOG Y NOTICIAS -->
+            <div class="tab-pane fade" id="pills-blog" role="tabpanel" aria-labelledby="pills-blog-tab">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bold text-dark">Actualidad Laboral y Fiscal</h1>
+                    <p class="text-muted">Mantente informado sobre cambios en el IRPF, cotizaciones a la Seguridad Social y novedades en tu nómina.</p>
+                </div>
+
+                <!-- Filtros de Categorías -->
+                <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
+                    <button class="btn btn-sm btn-dark rounded-pill px-3">Todas</button>
+                    <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">IRPF y Hacienda</button>
+                    <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Seguridad Social</button>
+                    <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">Convenios y Salarios</button>
+                </div>
+
+                <!-- Grid de Artículos del Blog -->
+                <div class="row g-4 justify-content-center">
+                    
+                    <!-- Artículo 1 -->
+                    <div class="col-md-4">
+                        <div class="card card-custom h-100 bg-white">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mb-2">
+                                    <span class="badge badge-category px-2 py-1 rounded">IRPF y Hacienda</span>
+                                    <small class="text-muted ms-2">15 Sep 2026</small>
+                                </div>
+                                <h3 class="h5 card-title fw-bold text-dark mt-1">Nuevos tramos de retención de IRPF para este ejercicio</h3>
+                                <p class="card-text text-muted small flex-grow-1">Analizamos cómo afectan las últimas modificaciones fiscales a las rentas medias y bajas en la nómina mensual.</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill mt-3 align-self-start">Leer artículo completo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artículo 2 -->
+                    <div class="col-md-4">
+                        <div class="card card-custom h-100 bg-white">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mb-2">
+                                    <span class="badge badge-category px-2 py-1 rounded">Seguridad Social</span>
+                                    <small class="text-muted ms-2">10 Sep 2026</small>
+                                </div>
+                                <h3 class="h5 card-title fw-bold text-dark mt-1">Todo sobre el MEI y las cotizaciones de contingencias</h3>
+                                <p class="card-text text-muted small flex-grow-1">Desglose detallado de qué porcentaje asume la empresa y cuál descuenta el trabajador en concepto de cotización.</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill mt-3 align-self-start">Leer artículo completo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artículo 3 -->
+                    <div class="col-md-4">
+                        <div class="card card-custom h-100 bg-white">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mb-2">
+                                    <span class="badge badge-category px-2 py-1 rounded">Convenios y Salarios</span>
+                                    <small class="text-muted ms-2">02 Sep 2026</small>
+                                </div>
+                                <h3 class="h5 card-title fw-bold text-dark mt-1">¿Cómo se calculan las pagas extraordinarias de verano y Navidad?</h3>
+                                <p class="card-text text-muted small flex-grow-1">Aprende a diferenciar el pago prorrateado frente a las pagas extras independientes y cómo computan en tu bruto anual.</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill mt-3 align-self-start">Leer artículo completo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
+    </main>
 
-        <div class="form-group">
-          <label for="pay-check-count">Número de Pagas</label>
-          <select id="pay-check-count">
-            <option value="12">12 pagas</option>
-            <option value="14" selected>14 pagas</option>
-          </select>
+    <!-- Footer General -->
+    <footer class="text-center py-4 text-muted border-top bg-white mt-5">
+        <div class="container">
+            <small>* Nota: Los cálculos y contenidos de <strong>calculo-nomina.es</strong> tienen carácter orientativo y están basados en la normativa vigente.</small>
         </div>
+    </footer>
 
-        <div class="form-group">
-          <label for="contract-type">Tipo de Contrato</label>
-          <select id="contract-type">
-            <option value="general">General / Indefinido</option>
-            <option value="temporal">Temporal / Duración determinada</option>
-          </select>
-        </div>
+    <!-- Scripts de Bootstrap y lógica de cálculo -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Activar tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
 
-        <button type="submit" class="btn-submit">Calcular Sueldo Neto</button>
-      </form>
+        // Lógica de cálculo de la nómina
+        function calcularNomina() {
+            const brutoAnual = parseFloat(document.getElementById('bruto').value);
+            const pagas = parseInt(document.getElementById('pagas').value);
 
-      <div class="results-panel">
-        <div class="result-item">
-          <div class="result-label">Sueldo Neto Mensual</div>
-          <div class="result-value highlight" id="net-monthly">1.485,30 €</div>
-        </div>
-        <div class="result-item">
-          <div class="result-label">Retención IRPF Estimada</div>
-          <div class="result-value" id="irpf-rate">14.25%</div>
-        </div>
-        <div class="result-item">
-          <div class="result-label">Cotizaciones Seguridad Social</div>
-          <div class="result-value" id="social-security">6.35%</div>
-        </div>
-      </div>
-    </section>
+            if (!brutoAnual || brutoAnual <= 0) {
+                alert('Por favor, introduce un salario bruto anual válido.');
+                return;
+            }
 
-    <h2 class="section-title">Herramientas y Guías Laborales</h2>
+            const brutoMensual = brutoAnual / pagas;
+            const ssMensual = brutoMensual * 0.0635;
+            
+            let tipoIrpf = 0.12;
+            if (brutoAnual > 30000) tipoIrpf = 0.18;
+            if (brutoAnual > 60000) tipoIrpf = 0.28;
 
-    <div class="categories-grid">
-      <a href="tramos-irpf.html" class="category-card">
-        <div>
-          <div class="category-icon"><i class="fa-solid fa-percent"></i></div>
-          <h3>Tramos de IRPF</h3>
-          <p>Consulta las tablas de retención estatales y autonómicas para entender cómo tributa tu sueldo bruto.</p>
-        </div>
-        <span class="category-link">Ver tablas de IRPF <i class="fa-solid fa-arrow-right"></i></span>
-      </a>
+            const irpfMensual = brutoMensual * tipoIrpf;
+            const netoMensual = brutoMensual - ssMensual - irpfMensual;
+            const netoAnual = netoMensual * pagas;
 
-      <a href="finiquito.html" class="category-card">
-        <div>
-          <div class="category-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-          <h3>Calculadora de Finiquito</h3>
-          <p>Aprende a calcular el finiquito y la indemnización que te corresponde por despido o baja voluntaria.</p>
-        </div>
-        <span class="category-link">Guía de Finiquito <i class="fa-solid fa-arrow-right"></i></span>
-      </a>
+            const formatoEuros = (valor) => valor.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
 
-      <a href="pagas-extra.html" class="category-card">
-        <div>
-          <div class="category-icon"><i class="fa-solid fa-calendar-check"></i></div>
-          <h3>Pagas Extraordinarias</h3>
-          <p>Descubre las diferencias entre tener 12 pagas prorrateadas o 14 pagas anuales en tu contrato.</p>
-        </div>
-        <span class="category-link">Ver diferencias <i class="fa-solid fa-arrow-right"></i></span>
-      </a>
-
-      <a href="cotizaciones.html" class="category-card">
-        <div>
-          <div class="category-icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <h3>Seguridad Social</h3>
-          <p>Conoce los porcentajes que aportas a contingencias comunes, desempleo y formación profesional.</p>
-        </div>
-        <span class="category-link">Ver porcentajes <i class="fa-solid fa-arrow-right"></i></span>
-      </a>
-
-      <a href="horas-extra.html" class="category-card">
-        <div>
-          <div class="category-icon"><i class="fa-solid fa-clock"></i></div>
-          <h3>Horas Extraordinarias</h3>
-          <p>Información detallada sobre cómo se pagan y cotizan las horas extras estructurales y de fuerza mayor.</p>
-        </div>
-        <span class="category-link">Saber más <i class="fa-solid fa-arrow-right"></i></span>
-      </a>
-
-      <a href="baja-medica.html" class="category-card">
-        <div>
-          <div class="category-icon"><i class="fa-solid fa-kit-medical"></i></div>
-          <h3>Bajas e Incapacidad</h3>
-          <p>Calcula cuánto cobras durante una baja por enfermedad común o accidente laboral.</p>
-        </div>
-        <span class="category-link">Calcular baja <i class="fa-solid fa-arrow-right"></i></span>
-      </a>
-
-      <a href="noticias.html" class="category-card">
-        <div>
-          <div class="category-icon"><i class="fa-solid fa-newspaper"></i></div>
-          <h3>Noticias y Actualidad</h3>
-          <p>Sigue las últimas novedades legislativas sobre el SMI, cambios en el IRPF y reformas laborales.</p>
-        </div>
-        <span class="category-link">Leer noticias <i class="fa-solid fa-arrow-right"></i></span>
-      </a>
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 CalculoNómina - Todos los derechos reservados.</p>
-    <p style="margin-top: 10px;">
-      <a href="index.html">Inicio</a> | 
-      <a href="tramos-irpf.html">Tramos IRPF</a> | 
-      <a href="finiquito.html">Finiquito</a> | 
-      <a href="pagas-extra.html">Pagas Extra</a> | 
-      <a href="cotizaciones.html">Cotizaciones</a> | 
-      <a href="horas-extra.html">Horas Extra</a> | 
-      <a href="baja-medica.html">Baja Médica</a> | 
-      <a href="noticias.html">Noticias</a>
-    </p>
-  </footer>
-
-  <script>
-    function calculateSalary() {
-      const gross = parseFloat(document.getElementById('gross-salary').value) || 0;
-      const pays = parseInt(document.getElementById('pay-check-count').value);
-      
-      let irpf = 0.12;
-      if (gross > 18000) irpf = 0.1425;
-      if (gross > 30000) irpf = 0.185;
-      if (gross > 50000) irpf = 0.245;
-
-      const ss = 0.0635;
-      const totalDeductions = gross * (irpf + ss);
-      const netAnnual = gross - totalDeductions;
-      const netMonthly = netAnnual / pays;
-
-      document.getElementById('net-monthly').innerText = netMonthly.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
-      document.getElementById('irpf-rate').innerText = (irpf * 100).toFixed(2) + '%';
-      document.getElementById('social-security').innerText = (ss * 100).toFixed(2) + '%';
-    }
-  </script>
-
+            document.getElementById('resBrutoMensual').innerText = formatoEuros(brutoMensual);
+            document.getElementById('resSS').innerText = '- ' + formatoEuros(ssMensual);
+            document.getElementById('resIRPF').innerText = '- ' + formatoEuros(irpfMensual);
+            document.getElementById('resNetoMensual').innerText = formatoEuros(netoMensual);
+            document.getElementById('resNetoAnual').innerText = 'Neto Anual estimado: ' + formatoEuros(netoAnual);
+        }
+    </script>
 </body>
 </html>
+
 
 
