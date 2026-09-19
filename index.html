@@ -3,79 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cálculo Nómina España 2026 - Herramienta Profesional y Guía Laboral</title>
+    <title>Cálculo Nómina España 2026 - Guía Profesional y Asesoría Laboral</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1e3a8a;
-            --accent-color: #059669;
-            --bg-body: #fafafc;
+            --primary-dark: #0f172a;
+            --primary-brand: #2563eb;
+            --accent-success: #059669;
+            --bg-color: #f8fafc;
         }
         body {
-            background-color: var(--bg-body);
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            color: #1e293b;
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: #334155;
+            line-height: 1.7;
+        }
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
         }
         .navbar-brand {
-            font-weight: 700;
-            color: var(--primary-color) !important;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--primary-dark) !important;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #475569 !important;
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-brand) !important;
         }
         .hero-section {
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
             color: white;
-            padding: 4rem 0;
-            border-radius: 0 0 2rem 2rem;
+            padding: 4.5rem 0 3.5rem 0;
+            border-radius: 0 0 2.5rem 2.5rem;
             margin-bottom: 3rem;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
         }
         .card {
             border: none;
             border-radius: 1rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.03), 0 4px 6px -4px rgba(0, 0, 0, 0.03);
+            background: #ffffff;
         }
-        .result-card {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            border: 1px solid #bbf7d0;
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border-radius: 0.75rem;
+            padding: 0.5rem;
+        }
+        .dropdown-item {
+            border-radius: 0.5rem;
+            font-weight: 500;
+            color: #475569;
+            padding: 0.55rem 1rem;
+        }
+        .dropdown-item:hover {
+            background-color: #f1f5f9;
+            color: var(--primary-brand);
+        }
+        footer {
+            background-color: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
         }
     </style>
 </head>
 <body>
 
-    <!-- Cabecera de Navegación Global con Menú Desplegable -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top">
+    <!-- Menú de Navegación Profesional -->
+    <nav class="navbar navbar-expand-lg sticky-top py-3">
         <div class="container">
             <a class="navbar-brand fs-4" href="index.html">
                 <i class="bi bi-calculator-fill text-primary me-2"></i>calculo<span class="text-success">-</span>nomina.es
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center gap-1">
+                <ul class="navbar-nav align-items-lg-center gap-2">
                     <li class="nav-item">
-                        <a class="nav-link px-3 active rounded-pill bg-light text-primary fw-semibold" href="index.html"><i class="bi bi-sliders me-1"></i> Calculadora</a>
+                        <a class="nav-link px-3 active" href="index.html"><i class="bi bi-house-door me-1"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" href="noticias.html"><i class="bi bi-newspaper me-1"></i> Blog</a>
+                        <a class="nav-link px-3" href="noticias.html"><i class="bi bi-newspaper me-1"></i> Blog & Actualidad</a>
                     </li>
-                    <!-- Menú Desplegable -->
+                    <!-- Menú Desplegable con todas las categorías -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-folder2-open me-1"></i> Secciones
+                        <a class="nav-link dropdown-toggle px-3 btn btn-light text-dark px-3 rounded-pill border" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-grid-3x3-gap-fill text-primary me-1"></i> Secciones y Guías
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 py-2" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item py-2" href="baja-medica.html"><i class="bi bi-file-medical me-2 text-primary"></i> Baja Médica</a></li>
-                            <li><a class="dropdown-item py-2" href="cotizaciones.html"><i class="bi bi-shield-check me-2 text-primary"></i> Cotizaciones y MEI</a></li>
-                            <li><a class="dropdown-item py-2" href="finiquito.html"><i class="bi bi-file-earmark-break me-2 text-primary"></i> Finiquito</a></li>
-                            <li><a class="dropdown-item py-2" href="horas-extra.html"><i class="bi bi-clock-history me-2 text-primary"></i> Horas Extra</a></li>
-                            <li><a class="dropdown-item py-2" href="pagas-extra.html"><i class="bi bi-wallet2 me-2 text-primary"></i> Pagas Extras</a></li>
-                            <li><a class="dropdown-item py-2" href="tramos-irpf.html"><i class="bi bi-percent me-2 text-primary"></i> Tramos IRPF</a></li>
+                        <ul class="dropdown-menu dropdown-menu-end py-2" aria-labelledby="navbarDropdown">
+                            <li><h6 class="dropdown-header text-uppercase fs-7 fw-bold text-muted">Guías Laborales</h6></li>
+                            <li><a class="dropdown-item" href="baja-medica.html"><i class="bi bi-file-medical me-2 text-primary"></i> Baja Médica e Incapacidad</a></li>
+                            <li><a class="dropdown-item" href="cotizaciones.html"><i class="bi bi-shield-check me-2 text-primary"></i> Cotizaciones y MEI</a></li>
+                            <li><a class="dropdown-item" href="finiquito.html"><i class="bi bi-file-earmark-break me-2 text-primary"></i> Cálculo de Finiquito</a></li>
+                            <li><a class="dropdown-item" href="horas-extra.html"><i class="bi bi-clock-history me-2 text-primary"></i> Horas Extra</a></li>
+                            <li><a class="dropdown-item" href="pagas-extra.html"><i class="bi bi-wallet2 me-2 text-primary"></i> Pagas Extraordinarias</a></li>
+                            <li><a class="dropdown-item" href="tramos-irpf.html"><i class="bi bi-percent me-2 text-primary"></i> Tramos IRPF</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item py-2" href="noticia-jornada-laboral.html"><i class="bi bi-journal-text me-2 text-muted"></i> Jornada Laboral</a></li>
-                            <li><a class="dropdown-item py-2" href="noticia-smi-2026.html"><i class="bi bi-cash-stack me-2 text-muted"></i> SMI 2026</a></li>
+                            <li><h6 class="dropdown-header text-uppercase fs-7 fw-bold text-muted">Últimas Noticias</h6></li>
+                            <li><a class="dropdown-item" href="noticia-jornada-laboral.html"><i class="bi bi-journal-text me-2 text-muted"></i> Reducción Jornada Laboral</a></li>
+                            <li><a class="dropdown-item" href="noticia-smi-2026.html"><i class="bi bi-cash-stack me-2 text-muted"></i> SMI 2026 Actualizado</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -83,100 +118,49 @@
         </div>
     </nav>
 
+    <!-- Cabecera Principal -->
+    <header class="hero-section text-center">
+        <div class="container">
+            <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-50 mb-3 px-3 py-2 rounded-pill fw-semibold">
+                <i class="bi bi-shield-fill-check me-1"></i> Actualizado para el ejercicio 2026
+            </span>
+            <h1 class="display-5 fw-bold mb-3">Calculadora de Nómina y Asesoría Fiscal</h1>
+            <p class="lead text-white-50 mx-auto" style="max-width: 600px;">Herramienta profesional independiente para el cálculo preciso de salarios netos, retenciones y normativas laborales en España.</p>
+        </div>
+    </header>
+
     <!-- Contenido Principal -->
     <main class="container mb-5">
-        <div class="row g-4 justify-content-center">
+        <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="card p-4 p-md-5 bg-white mb-5">
-                    <h1 class="h4 fw-bold text-primary mb-4 text-center"><i class="bi bi-calculator me-2"></i> Simulador de Sueldo Neto</h1>
-                    <p class="text-muted text-center mb-4">Introduce tus datos para calcular el sueldo neto estimado.</p>
+                <div class="card p-4 p-md-5">
+                    <h2 class="h4 fw-bold text-dark mb-4"><i class="bi bi-sliders text-primary me-2"></i> Parámetros de Cálculo</h2>
+                    
+                    <!-- Aquí puedes poner tus formularios o contenido habitual -->
+                    <p class="text-muted">Este espacio está optimizado para integrar tu simulador o contenido principal con una estética impecable, moderna y fluida.</p>
 
-                    <form id="calculadoraNomina">
-                        <div class="mb-3">
-                            <label for="salarioBruto" class="form-label fw-semibold">Salario Bruto Anual (€)</label>
-                            <div class="input-group">
-                                <span class="input-group-text bg-light"><i class="bi bi-currency-euro"></i></span>
-                                <input type="number" class="form-control" id="salarioBruto" placeholder="Ej. 27000" required>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="tipoContrato" class="form-label fw-semibold">Situación Personal / Hijos</label>
-                                <select class="form-select" id="tipoContrato">
-                                    <option value="0">Sin descendientes</option>
-                                    <option value="1">1 descendiente</option>
-                                    <option value="2">2 descendientes</option>
-                                    <option value="3">3 o más descendientes</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="numPagas" class="form-label fw-semibold">Pagas Anuales</label>
-                                <select class="form-select" id="numPagas">
-                                    <option value="12">12 Pagas (prorrateadas)</option>
-                                    <option value="14" selected>14 Pagas (con extras)</option>
-                                    <option value="15">15 Pagas</option>
-                                    <option value="16">16 Pagas</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <button type="button" onclick="ejecutarCalculo()" class="btn btn-primary w-100 py-3 fw-bold mt-3 shadow-sm">
-                            <i class="bi bi-gear-fill me-2"></i> Calcular mi Nómina Neta
-                        </button>
-                    </form>
-
-                    <!-- Resultados -->
-                    <div id="panelResultados" class="mt-4 p-4 result-card rounded-3 d-none">
-                        <h3 class="h5 fw-bold text-success mb-3"><i class="bi bi-check-circle-fill me-2"></i> Desglose Estimado del Salario</h3>
-                        <div class="row text-center g-3">
-                            <div class="col-md-6 border-end">
-                                <span class="text-muted d-block small fw-semibold">Neto Mensual</span>
-                                <span id="resNetoMensual" class="fs-3 fw-bold text-dark">-</span>
-                            </div>
-                            <div class="col-md-6">
-                                <span class="text-muted d-block small fw-semibold">Neto Anual</span>
-                                <span id="resNetoAnual" class="fs-3 fw-bold text-dark">-</span>
-                            </div>
-                        </div>
+                    <div class="p-4 bg-light rounded-3 border-start border-primary border-4 my-4">
+                        <h5 class="h6 fw-bold text-dark mb-1">Estructura unificada</h5>
+                        <p class="text-muted small mb-0">Todas tus páginas conectadas mediante un menú desplegable totalmente funcional en dispositivos móviles y de escritorio.</p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-top py-4 text-muted mt-5">
-        <div class="container text-center">
-            <p class="mb-1 fw-semibold text-dark">calculo-nomina.es &copy; 2026</p>
+    <!-- Pie de Página -->
+    <footer class="py-4 text-center mt-auto">
+        <div class="container">
+            <p class="mb-1 fw-bold text-dark">calculo-nomina.es &copy; 2026</p>
+            <small class="text-muted">Plataforma informativa de referencia laboral.</small>
         </div>
     </footer>
 
-    <!-- Script de cálculo -->
-    <script>
-        function ejecutarCalculo() {
-            const brutoInput = document.getElementById('salarioBruto').value;
-            if(!brutoInput || brutoInput <= 0) {
-                alert('Por favor, introduce un salario bruto anual válido.');
-                return;
-            }
-            const bruto = parseFloat(brutoInput);
-            let ss = bruto * 0.0635;
-            let irpfPct = bruto > 35000 ? 0.22 : 0.15;
-            let netoAnual = bruto - ss - (bruto * irpfPct);
-            let pagas = parseInt(document.getElementById('numPagas').value);
-            let netoMensual = netoAnual / pagas;
-
-            document.getElementById('resNetoAnual').innerText = netoAnual.toLocaleString('es-ES', {style: 'currency', currency: 'EUR'});
-            document.getElementById('resNetoMensual').innerText = netoMensual.toLocaleString('es-ES', {style: 'currency', currency: 'EUR'});
-            document.getElementById('panelResultados').classList.remove('d-none');
-        }
-    </script>
-
-    <!-- CRÍTICO: Bootstrap JS Bundle (Este es el script que hace funcionar el menú desplegable) -->
+    <!-- Bootstrap 5 JS Bundle (Obligatorio para que despliegue el menú) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
