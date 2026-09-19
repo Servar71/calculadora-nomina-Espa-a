@@ -1,172 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noticias y Actualidad Laboral 2026 | CalculoNómina</title>
-  <meta name="description" content="Últimas noticias y novedades sobre el Salario Mínimo Interprofesional, IRPF, cotizaciones a la Seguridad Social y legislación en España." />
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
-  <style>
-    :root {
-      --primary: #ec4899;
-      --primary-gradient: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
-      --bg-light: #f8fafc;
-      --text-dark: #0f172a;
-      --text-muted: #64748b;
-      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
-
-    header {
-      background: var(--primary-gradient);
-      color: white;
-      padding: 1.5rem 1.5rem 3.5rem 1.5rem;
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
-      box-shadow: 0 10px 30px rgba(236, 72, 153, 0.25);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 1.5rem;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .logo {
-      font-size: 1.4rem; font-weight: 800; display: flex; align-items: center; gap: 10px; color: white; text-decoration: none;
-    }
-    .logo i { background: rgba(255, 255, 255, 0.2); padding: 8px 10px; border-radius: 12px; }
-
-    .nav-links { display: flex; gap: 8px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { 
-      color: rgba(255, 255, 255, 0.9); 
-      text-decoration: none; 
-      font-weight: 600; 
-      padding: 6px 12px; 
-      border-radius: 16px; 
-      font-size: 0.88rem;
-      transition: all 0.3s;
-      white-space: nowrap;
-    }
-    .nav-links a:hover, .nav-links a.active { background: rgba(255, 255, 255, 0.25); color: #fff; }
-
-    .hero { max-width: 800px; margin: 1rem auto 0 auto; text-align: center; }
-    .hero h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.8rem; line-height: 1.2; }
-    .hero p { font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); font-weight: 300; }
-
-    .main-container { max-width: 1100px; margin: -2.5rem auto 3rem auto; padding: 0 1.5rem; }
-
-    .news-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem;
-    }
-
-    .news-card {
-      background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--card-shadow);
-      display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #f1f5f9;
-      text-decoration: none; color: inherit; transition: all 0.3s ease; cursor: pointer;
-    }
-    .news-card:hover {
-      transform: translateY(-5px); box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1); border-color: var(--primary);
-    }
-
-    .news-tag {
-      display: inline-block; background: #fdf2f8; color: var(--primary); padding: 4px 12px;
-      border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.8rem; align-self: flex-start;
-    }
-
-    .news-date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; }
-    .news-card h2 { font-size: 1.3rem; color: #0f172a; margin-bottom: 0.8rem; font-weight: 700; line-height: 1.3; }
-    .news-card p { color: #334155; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6; }
-    .read-more { font-weight: 700; color: var(--primary); font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
-
-    footer { background: #0f172a; color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; margin-top: 5rem; }
-    footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
-
-    @media (max-width: 850px) {
-      header { padding-bottom: 2.5rem; }
-      .hero h1 { font-size: 1.8rem; }
-      nav { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualidad Laboral y Fiscal 2026 | calculo-nomina.es</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --accent-color: #059669;
+            --bg-body: #f8fafc;
+        }
+        body {
+            background-color: var(--bg-body);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #1e293b;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        .card-custom {
+            border: none;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+        .card-custom:hover {
+            transform: translateY(-4px);
+        }
+        .nav-link {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+        }
+        .badge-category {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            font-weight: 600;
+        }
+        .blog-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="index.html" class="logo">
-        <i class="fa-solid fa-calculator"></i>
-        <span>CalculoNómina</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="tramos-irpf.html">Tramos IRPF</a></li>
-        <li><a href="finiquito.html">Finiquito</a></li>
-        <li><a href="pagas-extra.html">Pagas Extra</a></li>
-        <li><a href="cotizaciones.html">Cotizaciones</a></li>
-        <li><a href="horas-extra.html">Horas Extra</a></li>
-        <li><a href="baja-medica.html">Baja Médica</a></li>
-        <li><a href="noticias.html" class="active">Noticias</a></li>
-      </ul>
+    <!-- Cabecera de Navegación Global -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand fs-4" href="index.html">
+                <i class="bi bi-calculator-fill text-primary me-2"></i>calculo<span class="text-success">-</span>nomina.es
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="index.html"><i class="bi bi-sliders me-1"></i> Calculadora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active px-3 rounded-pill bg-light" href="noticias.html"><i class="bi bi-newspaper me-1"></i> Blog y Noticias</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <section class="hero">
-      <h1>Noticias y Actualidad Laboral</h1>
-      <p>Mantente informado sobre cambios en el IRPF, el Salario Mínimo y la normativa laboral en España.</p>
-    </section>
-  </header>
-
-  <main class="main-container">
-    <div class="news-grid">
-
-      <!-- Noticia 1: Jornada Laboral -->
-      <a href="noticia-jornada-laboral.html" class="news-card">
-        <div>
-          <span class="news-tag">Reforma Laboral</span>
-          <div class="news-date"><i class="fa-regular fa-calendar"></i> 17 de Septiembre de 2026</div>
-          <h2>Reducción de la jornada laboral a 37,5 horas: ¿Cómo afecta a tu salario neto?</h2>
-          <p>Entérate de cómo se aplicará la reducción de horas semanales sin recorte de sueldo y qué ocurre con el cálculo de las horas extraordinarias.</p>
+    <!-- Contenido Principal: Directorio de Artículos -->
+    <main class="container my-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold text-dark">Actualidad Laboral y Fiscal</h1>
+            <p class="text-muted">Artículos especializados en derecho laboral, fiscalidad de nóminas y optimización de ingresos.</p>
         </div>
-        <span class="read-more">Leer noticia completa <i class="fa-solid fa-arrow-right"></i></span>
-      </a>
 
-      <!-- Noticia 2: SMI -->
-      <a href="noticia-smi-2026.html" class="news-card">
-        <div>
-          <span class="news-tag">Salario Mínimo</span>
-          <div class="news-date"><i class="fa-regular fa-calendar"></i> 17 de Septiembre de 2026</div>
-          <h2>Subida del Salario Mínimo Interprofesional (SMI) en 2026: ¿Cómo afecta a tu nómina?</h2>
-          <p>El SMI se sitúa en 1.221 euros mensuales en 14 pagas. Descubre el análisis completo de las retenciones y bases de cotización.</p>
+        <!-- Grid de Artículos con Enlaces a Páginas Independientes -->
+        <div class="row g-4 justify-content-center">
+            
+            <!-- Artículo 1 -->
+            <div class="col-md-4">
+                <div class="card card-custom h-100 bg-white">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" class="blog-img" alt="IRPF y Hacienda">
+                    <div class="card-body d-flex flex-column">
+                        <div class="mb-2">
+                            <span class="badge badge-category px-2 py-1 rounded">IRPF y Hacienda</span>
+                            <small class="text-muted ms-2">15 Sep 2026</small>
+                        </div>
+                        <h3 class="h5 card-title fw-bold text-dark mt-1">Guía completa: Nuevos tramos de retención de IRPF y deducciones</h3>
+                        <p class="card-text text-muted small flex-grow-1">Análisis profundo sobre el impacto de los tipos marginales en las rentas del trabajo y cómo afecta a tu próxima declaración.</p>
+                        <!-- Enlace a tu archivo independiente correspondiente en GitHub -->
+                        <a href="tramos-irpf.html" class="btn btn-outline-primary btn-sm rounded-pill mt-3 align-self-start">Leer artículo completo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 2 -->
+            <div class="col-md-4">
+                <div class="card card-custom h-100 bg-white">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" class="blog-img" alt="Seguridad Social">
+                    <div class="card-body d-flex flex-column">
+                        <div class="mb-2">
+                            <span class="badge badge-category px-2 py-1 rounded">Seguridad Social</span>
+                            <small class="text-muted ms-2">10 Sep 2026</small>
+                        </div>
+                        <h3 class="h5 card-title fw-bold text-dark mt-1">Todo sobre el MEI y las cotizaciones sociales en tu nómina</h3>
+                        <p class="card-text text-muted small flex-grow-1">Desglose técnico de contingencias comunes, desempleo, formación profesional y el Mecanismo de Equidad Intergeneracional.</p>
+                        <!-- Enlace a tu archivo independiente correspondiente en GitHub -->
+                        <a href="cotizaciones.html" class="btn btn-outline-primary btn-sm rounded-pill mt-3 align-self-start">Leer artículo completo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artículo 3 -->
+            <div class="col-md-4">
+                <div class="card card-custom h-100 bg-white">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" class="blog-img" alt="Convenios y Salarios">
+                    <div class="card-body d-flex flex-column">
+                        <div class="mb-2">
+                            <span class="badge badge-category px-2 py-1 rounded">Convenios y Salarios</span>
+                            <small class="text-muted ms-2">02 Sep 2026</small>
+                        </div>
+                        <h3 class="h5 card-title fw-bold text-dark mt-1">Pagas extraordinarias: ¿Prorrateadas o de cobro independiente?</h3>
+                        <p class="card-text text-muted small flex-grow-1">Ventajas, inconvenientes y efectos fiscales de recibir tus pagas extras divididas en 12 meses o en fechas específicas.</p>
+                        <!-- Enlace a tu archivo independiente correspondiente en GitHub -->
+                        <a href="pagas-extra.html" class="btn btn-outline-primary btn-sm rounded-pill mt-3 align-self-start">Leer artículo completo</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <span class="read-more">Leer noticia completa <i class="fa-solid fa-arrow-right"></i></span>
-      </a>
+    </main>
 
-    </div>
-  </main>
+    <!-- Footer General -->
+    <footer class="text-center py-4 text-muted border-top bg-white mt-5">
+        <div class="container">
+            <small>* Nota: Los contenidos de <strong>calculo-nomina.es</strong> tienen carácter orientativo y están basados en la normativa vigente en España.</small>
+        </div>
+    </footer>
 
-  <footer>
-    <p>&copy; 2026 CalculoNómina - Todos los derechos reservados.</p>
-    <p style="margin-top: 10px;">
-      <a href="index.html">Inicio</a> | 
-      <a href="tramos-irpf.html">Tramos IRPF</a> | 
-      <a href="finiquito.html">Finiquito</a> | 
-      <a href="pagas-extra.html">Pagas Extra</a> | 
-      <a href="cotizaciones.html">Cotizaciones</a> | 
-      <a href="horas-extra.html">Horas Extra</a> | 
-      <a href="baja-medica.html">Baja Médica</a> | 
-      <a href="noticias.html">Noticias</a>
-    </p>
-  </footer>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
