@@ -130,6 +130,8 @@
                                 <select class="form-select" id="numPagas">
                                     <option value="12">12 Pagas</option>
                                     <option value="14" selected>14 Pagas (con extras)</option>
+                                    <option value="15">15 Pagas</option>
+                                    <option value="16">16 Pagas</option>
                                 </select>
                             </div>
                         </div>
@@ -211,7 +213,6 @@
             }
             const bruto = parseFloat(brutoInput);
             
-            // Simulación precisa orientativa basada en deducciones de SS (~6.35%) + IRPF progresivo
             let ss = bruto * 0.0635;
             let imponible = bruto - ss;
             
