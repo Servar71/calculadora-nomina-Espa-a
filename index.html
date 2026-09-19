@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,7 +23,6 @@
         .navbar-brand {
             font-weight: 700;
             color: var(--primary-color) !important;
-            cursor: pointer;
         }
         .card-custom {
             border: none;
@@ -44,13 +44,9 @@
         .btn-primary-custom:hover {
             background-color: #1e40af;
         }
-        .nav-pills .nav-link.active {
-            background-color: var(--primary-color);
-        }
-        .nav-pills .nav-link {
-            color: var(--primary-color);
+        .nav-link {
+            color: var(--primary-color) !important;
             font-weight: 600;
-            cursor: pointer;
         }
         .badge-category {
             background-color: #e0f2fe;
@@ -58,325 +54,144 @@
             font-weight: 600;
         }
         .blog-img {
-            height: 200px;
+            height: 180px;
             object-fit: cover;
             width: 100%;
-        }
-        .article-body p {
-            line-height: 1.8;
-            margin-bottom: 1.2rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Cabecera de Navegación Corregida -->
+    <!-- Cabecera de Navegación Global -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 sticky-top">
         <div class="container">
-            <!-- Logotipo funcional -->
-            <a class="navbar-brand fs-4" onclick="mostrarSeccion('calc')" href="javascript:void(0);">
+            <a class="navbar-brand fs-4" href="index.html">
                 <i class="bi bi-calculator-fill text-primary me-2"></i>calculo<span class="text-success">-</span>nomina.es
             </a>
-            
-            <!-- Pestañas de Navegación Interna Directas -->
-            <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active rounded-pill px-3 me-2" id="pills-calc-tab" onclick="mostrarSeccion('calc')" type="button">
-                        <i class="bi bi-sliders me-1"></i> Calculadora
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link rounded-pill px-3" id="pills-blog-tab" onclick="mostrarSeccion('blog')" type="button">
-                        <i class="bi bi-newspaper me-1"></i> Blog y Noticias
-                    </button>
-                </li>
-            </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link active px-3 rounded-pill bg-light" href="index.html"><i class="bi bi-sliders me-1"></i> Calculadora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="noticias.html"><i class="bi bi-newspaper me-1"></i> Blog y Noticias</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <!-- Contenido Principal con Pestañas -->
+    <!-- Contenido Principal: La Calculadora -->
     <main class="container my-5">
-        <div class="tab-content" id="pills-tabContent">
-            
-            <!-- SECCIÓN 1: LA CALCULADORA -->
-            <div class="tab-pane fade show active" id="seccion-calc" role="tabpanel">
-                <div class="text-center mb-5">
-                    <h1 class="fw-bold text-dark">Calculadora de Sueldo Neto</h1>
-                    <p class="text-muted">Calcula tu salario neto mensual de forma rápida, transparente y adaptada a la legislación vigente.</p>
-                </div>
+        <div class="text-center mb-5">
+            <h1 class="fw-bold text-dark">Calculadora de Sueldo Neto</h1>
+            <p class="text-muted">Calcula tu salario neto mensual de forma rápida, transparente y adaptada a la legislación vigente.</p>
+        </div>
 
-                <div class="row g-4 justify-content-center">
-                    <!-- Formulario de Entrada -->
-                    <div class="col-lg-5">
-                        <div class="card card-custom p-4 h-100 bg-white">
-                            <h2 class="h5 mb-4 text-primary"><i class="bi bi-sliders me-2"></i>Datos de tu Nómina</h2>
-                            
-                            <form id="nominaForm">
-                                <div class="mb-3">
-                                    <label for="bruto" class="form-label fw-semibold">
-                                        Salario Bruto Anual (€)
-                                        <i class="bi bi-question-circle text-muted" data-bs-toggle="tooltip" title="Suma total de tus ingresos brutos antes de cualquier deducción fiscal o de seguridad social."></i>
-                                    </label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="bi bi-currency-euro"></i></span>
-                                        <input type="number" class="form-control" id="bruto" placeholder="Ej. 24000" required>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="pagas" class="form-label fw-semibold">
-                                        Número de Pagas
-                                        <i class="bi bi-question-circle text-muted" data-bs-toggle="tooltip" title="Generalmente 12 pagas o 14 pagas (incluyendo pagas extra)."></i>
-                                    </label>
-                                    <select class="form-select" id="pagas">
-                                        <option value="12">12 Pagas</option>
-                                        <option value="14" selected>14 Pagas</option>
-                                    </select>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="situacion" class="form-label fw-semibold">
-                                        Situación Familiar (IRPF)
-                                        <i class="bi bi-question-circle text-muted" data-bs-toggle="tooltip" title="Tu situación personal y familiar afecta directamente al tipo de retención aplicada."></i>
-                                    </label>
-                                    <select class="form-select" id="situacion">
-                                        <option value="1">Soltero / Sin hijos o discapacidad</option>
-                                        <option value="2">Casado con dos ingresos / Con hijos</option>
-                                        <option value="3">Otros casos especiales</option>
-                                    </select>
-                                </div>
-
-                                <button type="button" onclick="calcularNomina()" class="btn btn-primary-custom w-100 text-white rounded-pill shadow-sm mt-3">
-                                    <i class="bi bi-calculator me-2"></i>Calcular Sueldo Neto
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- Panel de Resultados (Dashboard) -->
-                    <div class="col-lg-5">
-                        <div class="card card-custom p-4 h-100 bg-white d-flex flex-column justify-content-between">
-                            <div>
-                                <h2 class="h5 mb-4 text-primary"><i class="bi bi-file-earmark-text me-2"></i>Desglose de Resultados</h2>
-                                
-                                <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
-                                    <span class="text-muted">Salario Bruto Mensual:</span>
-                                    <span class="fw-bold" id="resBrutoMensual">-- €</span>
-                                </div>
-                                <div class="d-flex justify-content-between mb-2 pb-2 border-bottom text-danger">
-                                    <span>Seguridad Social (Trabajador):</span>
-                                    <span class="fw-bold" id="resSS">-- €</span>
-                                </div>
-                                <div class="d-flex justify-content-between mb-3 pb-2 border-bottom text-danger">
-                                    <span>Retención IRPF (Estimada):</span>
-                                    <span class="fw-bold" id="resIRPF">-- €</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="net-salary-card p-3 text-center my-3 shadow-sm">
-                                    <small class="text-uppercase tracking-wider opacity-75">Salario Neto Mensual</small>
-                                    <div class="display-6 fw-bold my-1" id="resNetoMensual">0,00 €</div>
-                                    <small class="opacity-75" id="resNetoAnual">Neto Anual: 0,00 €</small>
-                                </div>
-
-                                <div class="text-center mt-3">
-                                    <p class="text-muted small mb-0">
-                                        <i class="bi bi-shield-lock-fill text-success"></i> <strong>Proceso seguro:</strong> Tus datos se calculan en tu navegador y no se almacenan.
-                                    </p>
-                                </div>
+        <div class="row g-4 justify-content-center">
+            <!-- Formulario de Entrada -->
+            <div class="col-lg-5">
+                <div class="card card-custom p-4 h-100 bg-white">
+                    <h2 class="h5 mb-4 text-primary"><i class="bi bi-sliders me-2"></i>Datos de tu Nómina</h2>
+                    
+                    <form id="nominaForm">
+                        <div class="mb-3">
+                            <label for="bruto" class="form-label fw-semibold">
+                                Salario Bruto Anual (€)
+                                <i class="bi bi-question-circle text-muted" data-bs-toggle="tooltip" title="Suma total de tus ingresos brutos antes de cualquier deducción fiscal o de seguridad social."></i>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-currency-euro"></i></span>
+                                <input type="number" class="form-control" id="bruto" placeholder="Ej. 24000" required>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="mb-3">
+                            <label for="pagas" class="form-label fw-semibold">
+                                Número de Pagas
+                                <i class="bi bi-question-circle text-muted" data-bs-toggle="tooltip" title="Generalmente 12 pagas o 14 pagas (incluyendo pagas extra)."></i>
+                            </label>
+                            <select class="form-select" id="pagas">
+                                <option value="12">12 Pagas</option>
+                                <option value="14" selected>14 Pagas</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="situacion" class="form-label fw-semibold">
+                                Situación Familiar (IRPF)
+                                <i class="bi bi-question-circle text-muted" data-bs-toggle="tooltip" title="Tu situación personal y familiar afecta directamente al tipo de retención aplicada."></i>
+                            </label>
+                            <select class="form-select" id="situacion">
+                                <option value="1">Soltero / Sin hijos o discapacidad</option>
+                                <option value="2">Casado con dos ingresos / Con hijos</option>
+                                <option value="3">Otros casos especiales</option>
+                            </select>
+                        </div>
+
+                        <button type="button" onclick="calcularNomina()" class="btn btn-primary-custom w-100 text-white rounded-pill shadow-sm mt-3">
+                            <i class="bi bi-calculator me-2"></i>Calcular Sueldo Neto
+                        </button>
+                    </form>
                 </div>
             </div>
 
-            <!-- SECCIÓN 2: BLOG Y NOTICIAS CON ARTÍCULOS PROFUNDOS -->
-            <div class="tab-pane fade" id="seccion-blog" role="tabpanel">
-                <div id="lista-articulos">
-                    <div class="text-center mb-5">
-                        <h1 class="fw-bold text-dark">Actualidad Laboral y Fiscal</h1>
-                        <p class="text-muted">Artículos especializados en derecho laboral, fiscalidad de nóminas y optimización de ingresos.</p>
-                    </div>
-
-                    <!-- Grid de Artículos con Imágenes -->
-                    <div class="row g-4 justify-content-center">
+            <!-- Panel de Resultados (Dashboard) -->
+            <div class="col-lg-5">
+                <div class="card card-custom p-4 h-100 bg-white d-flex flex-column justify-content-between">
+                    <div>
+                        <h2 class="h5 mb-4 text-primary"><i class="bi bi-file-earmark-text me-2"></i>Desglose de Resultados</h2>
                         
-                        <!-- Artículo 1 -->
-                        <div class="col-md-4">
-                            <div class="card card-custom h-100 bg-white">
-                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" class="blog-img" alt="IRPF y Hacienda">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="mb-2">
-                                        <span class="badge badge-category px-2 py-1 rounded">IRPF y Hacienda</span>
-                                        <small class="text-muted ms-2">15 Sep 2026</small>
-                                    </div>
-                                    <h3 class="h5 card-title fw-bold text-dark mt-1">Guía completa: Nuevos tramos de retención de IRPF y deducciones</h3>
-                                    <p class="card-text text-muted small flex-grow-1">Análisis profundo sobre el impacto de los tipos marginales en las rentas del trabajo y cómo afecta a tu próxima declaración.</p>
-                                    <button onclick="leerArticuloCompleto(1)" class="btn btn-outline-primary btn-sm rounded-pill mt-3 align-self-start">Leer artículo completo (1.000 palabras)</button>
-                                </div>
-                            </div>
+                        <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                            <span class="text-muted">Salario Bruto Mensual:</span>
+                            <span class="fw-bold" id="resBrutoMensual">-- €</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2 pb-2 border-bottom text-danger">
+                            <span>Seguridad Social (Trabajador):</span>
+                            <span class="fw-bold" id="resSS">-- €</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 pb-2 border-bottom text-danger">
+                            <span>Retención IRPF (Estimada):</span>
+                            <span class="fw-bold" id="resIRPF">-- €</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="net-salary-card p-3 text-center my-3 shadow-sm">
+                            <small class="text-uppercase tracking-wider opacity-75">Salario Neto Mensual</small>
+                            <div class="display-6 fw-bold my-1" id="resNetoMensual">0,00 €</div>
+                            <small class="opacity-75" id="resNetoAnual">Neto Anual: 0,00 €</small>
                         </div>
 
-                        <!-- Artículo 2 -->
-                        <div class="col-md-4">
-                            <div class="card card-custom h-100 bg-white">
-                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" class="blog-img" alt="Seguridad Social">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="mb-2">
-                                        <span class="badge badge-category px-2 py-1 rounded">Seguridad Social</span>
-                                        <small class="text-muted ms-2">10 Sep 2026</small>
-                                    </div>
-                                    <h3 class="h5 card-title fw-bold text-dark mt-1">Todo sobre el MEI y las cotizaciones sociales en tu nómina</h3>
-                                    <p class="card-text text-muted small flex-grow-1">Desglose técnico de contingencias comunes, desempleo, formación profesional y el Mecanismo de Equidad Intergeneracional.</p>
-                                    <button onclick="leerArticuloCompleto(2)" class="btn btn-outline-primary btn-sm rounded-pill mt-3 align-self-start">Leer artículo completo (1.000 palabras)</button>
-                                </div>
-                            </div>
+                        <div class="text-center mt-3">
+                            <p class="text-muted small mb-0">
+                                <i class="bi bi-shield-lock-fill text-success"></i> <strong>Proceso seguro:</strong> Tus datos se calculan en tu navegador y no se almacenan.
+                            </p>
                         </div>
-
-                        <!-- Artículo 3 -->
-                        <div class="col-md-4">
-                            <div class="card card-custom h-100 bg-white">
-                                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" class="blog-img" alt="Convenios y Salarios">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="mb-2">
-                                        <span class="badge badge-category px-2 py-1 rounded">Convenios y Salarios</span>
-                                        <small class="text-muted ms-2">02 Sep 2026</small>
-                                    </div>
-                                    <h3 class="h5 card-title fw-bold text-dark mt-1">Pagas extraordinarias: ¿Prorrateadas o de cobro independiente?</h3>
-                                    <p class="card-text text-muted small flex-grow-1">Ventajas, inconvenientes y efectos fiscales de recibir tus pagas extras divididas en 12 meses o en fechas específicas.</p>
-                                    <button onclick="leerArticuloCompleto(3)" class="btn btn-outline-primary btn-sm rounded-pill mt-3 align-self-start">Leer artículo completo (1.000 palabras)</button>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-
-                <!-- Contenedor del Artículo Extendido con Contenido Enriquecido -->
-                <div id="articulo-detalle" class="card card-custom p-5 bg-white mt-4" style="display: none;">
-                    <button onclick="volverAListado()" class="btn btn-outline-secondary btn-sm rounded-pill mb-4 align-self-start">
-                        <i class="bi bi-arrow-left me-1"></i> Volver al listado de noticias
-                    </button>
-                    <div id="contenido-articulo-html" class="article-body">
-                        <!-- Aquí se inyecta el artículo largo completo -->
-                    </div>
-                </div>
-
             </div>
-
         </div>
     </main>
 
     <!-- Footer General -->
     <footer class="text-center py-4 text-muted border-top bg-white mt-5">
         <div class="container">
-            <small>* Nota: Los cálculos y contenidos de <strong>calculo-nomina.es</strong> tienen carácter orientativo y están basados en la normativa fiscal y laboral vigente en España.</small>
+            <small>* Nota: Los cálculos y contenidos de <strong>calculo-nomina.es</strong> tienen carácter orientativo y están basados en la normativa vigente en España.</small>
         </div>
     </footer>
 
-    <!-- Bootstrap JS y Scripts Avanzados -->
+    <!-- Bootstrap JS y Lógica -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Activar tooltips
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl)
         });
 
-        // Función para cambiar de sección de forma directa y limpia
-        function mostrarSeccion(seccion) {
-            const elCalc = document.getElementById('seccion-calc');
-            const elBlog = document.getElementById('seccion-blog');
-            const tabCalc = document.getElementById('pills-calc-tab');
-            const tabBlog = document.getElementById('pills-blog-tab');
-
-            if (seccion === 'calc') {
-                elCalc.classList.add('show', 'active');
-                elBlog.classList.remove('show', 'active');
-                tabCalc.classList.add('active');
-                tabBlog.classList.remove('active');
-            } else {
-                elBlog.classList.add('show', 'active');
-                elCalc.classList.remove('show', 'active');
-                tabBlog.classList.add('active');
-                tabCalc.classList.remove('active');
-                volverAListado();
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Base de datos de artículos profundos (simulando contenido completo de 1000 palabras)
-        const articulosCompletos = {
-            1: `
-                <span class="badge badge-category px-2 py-1 rounded mb-2">IRPF y Hacienda</span>
-                <h2 class="fw-bold text-dark mb-3">Guía completa: Nuevos tramos de retención de IRPF y deducciones en nómina</h2>
-                <p class="text-muted small mb-4">Publicado el 15 de Septiembre de 2026 en <strong>calculo-nomina.es</strong></p>
-                <hr class="mb-4">
-                
-                <p class="lead">El Impuesto sobre la Renta de las Personas Físicas (IRPF) constituye uno de los elementos más determinantes a la hora de calcular el salario neto que un trabajador percibe mes a mes en su nómina. Comprender cómo operan los tramos de retención y qué factores personales influyen es vital para evitar sorpresas con la Agencia Tributaria.</p>
-                
-                <h4 class="text-primary mt-4 mb-3">1. ¿Qué es exactamente la retención de IRPF y por qué varía?</h4>
-                <p>La retención de IRPF no es un impuesto definitivo en sí mismo, sino un pago a cuenta que la empresa realiza a la Agencia Tributaria en nombre del trabajador. Este porcentaje se calcula de forma personalizada al inicio de cada año fiscal o ante modificaciones contractuales significativas, teniendo en cuenta no solo el sueldo bruto anual proyectado, sino también circunstancias familiares como el estado civil, la existencia de hijos, ascendientes a cargo o grados de discapacidad.</p>
-                
-                <h4 class="text-primary mt-4 mb-3">2. Los tramos estatales y autonómicos</h4>
-                <p>El sistema tributario español se estructura mediante una escala progresiva dividida en tramos. A medida que el sueldo bruto aumenta, el tipo marginal aplicable se incrementa sobre el tramo de ingresos correspondiente. Además, dado que las comunidades autónomas tienen competencias normativas cedidas, el tipo impositivo final puede variar ligeramente según la región de residencia del contribuyente. Puedes consultar los detalles oficiales actualizados directamente en la <a href="https://www.agenciatributaria.es" target="_blank" class="text-decoration-underline">Agencia Tributaria</a>.</p>
-                
-                <h4 class="text-primary mt-4 mb-3">3. Claves para optimizar tu retención</h4>
-                <p>Es recomendable comunicar siempre a departamento de recursos humanos cualquier cambio en tu situación personal (nacimiento de un hijo, matrimonio, cambio de residencia) a través del modelo 145. Ajustar correctamente estas variables previene retenciones excesivas o, por el contrario, una deuda fiscal inesperada al presentar la declaración de la renta anual.</p>
-            `,
-            2: `
-                <span class="badge badge-category px-2 py-1 rounded mb-2">Seguridad Social</span>
-                <h2 class="fw-bold text-dark mb-3">Todo sobre el MEI y las cotizaciones sociales en tu nómina</h2>
-                <p class="text-muted small mb-4">Publicado el 10 de Septiembre de 2026 en <strong>calculo-nomina.es</strong></p>
-                <hr class="mb-4">
-
-                <p class="lead">Las deducciones en concepto de Seguridad Social reflejadas en el reverso o pie de una nómina representan las aportaciones obligatorias que tanto el empleador como el trabajador realizan para sostener el sistema público de protección social, pensiones, prestaciones por desempleo y cobertura sanitaria.</p>
-
-                <h4 class="text-primary mt-4 mb-3">1. Contingencias comunes y profesionales</h4>
-                <p>El grueso de la aportación del trabajador se destina a contingencias comunes (que cubren situaciones de enfermedad común o accidentes no laborales). A esto se suman conceptos específicos como el desempleo (cuyo tipo varía según el contrato sea indefinido o temporal) y la formación profesional. Para profundizar en el marco legal de estas cotizaciones, puedes visitar el portal oficial de la <a href="https://www.seg-social.es" target="_blank" class="text-decoration-underline">Seguridad Social</a>.</p>
-
-                <h4 class="text-primary mt-4 mb-3">2. El papel del Mecanismo de Equidad Intergeneracional (MEI)</h4>
-                <p>Implementado para reforzar la sostenibilidad del sistema de pensiones de cara al envejecimiento demográfico, el MEI se aplica como un porcentaje adicional sobre la base de cotización. Su estructura divide la carga principal sobre la empresa, descontando una mínima fracción directa en la nómina del empleado.</p>
-
-                <h4 class="text-primary mt-4 mb-3">3. Impacto en el cálculo del sueldo neto</h4>
-                <p>Mientras que el empresario asume un coste social muy elevado por cada trabajador contratado (coste total de empresa), el trabajador experimenta un descuento directo que suele rondar entre el 6% y el 7% de su base sujeta a cotización, antes de aplicar el IRPF.</p>
-            `,
-            3: `
-                <span class="badge badge-category px-2 py-1 rounded mb-2">Convenios y Salarios</span>
-                <h2 class="fw-bold text-dark mb-3">Pagas extraordinarias: ¿Prorrateadas o de cobro independiente?</h2>
-                <p class="text-muted small mb-4">Publicado el 2 de Septiembre de 2026 en <strong>calculo-nomina.es</strong></p>
-                <hr class="mb-4">
-
-                <p class="lead">Una de las dudas más frecuentes entre los empleados al revisar su contrato laboral gira en torno a cómo van a percibir sus pagas extraordinarias (tradicionalmente asociadas a los meses de verano y Navidad). La elección entre pagas extras independientes o su prorrateo mensual tiene implicaciones directas en la economía doméstica.</p>
-
-                <h4 class="text-primary mt-4 mb-3">1. Diferencias operativas entre ambas modalidades</h4>
-                <p>En el modelo de 14 pagas, el trabajador percibe 12 mensualidades ordinarias más dos pagas extraordinarias íntegras (generalmente en junio y noviembre). En el modelo de 12 pagas, el importe anual de dichas pagas extraordinarias se divide de forma equitativa y se suma mes a mes a lo largo de todo el año natural.</p>
-
-                <h4 class="text-primary mt-4 mb-3">2. ¿Varía el sueldo bruto anual total?</h4>
-                <p>Matemáticamente, la cantidad neta y bruta percibida a lo largo de los 365 días del año es exactamente la misma en ambos escenarios. No existe una ventaja económica intrínseca en términos de ganar más dinero; la diferencia radica exclusivamente en la liquidez y la gestión financiera personal de cada trabajador.</p>
-
-                <h4 class="text-primary mt-4 mb-3">3. Recomendaciones según el perfil financiero</h4>
-                <p>El sistema prorrateado (12 pagas) ofrece mayor estabilidad mensual al evitar picos de ingresos y gastos descompensados, ideal para planificar presupuestos rígidos. Por otro lado, las 14 pagas funcionan tradicionalmente como un ahorro forzoso muy valorado para afrontar periodos de mayor consumo estacional.</p>
-            `
-        };
-
-        // Funciones para ver y ocultar artículos completos
-        function leerArticuloCompleto(id) {
-            document.getElementById('lista-articulos').style.display = 'none';
-            const contenedorDetalle = document.getElementById('articulo-detalle');
-            document.getElementById('contenido-articulo-html').innerHTML = articulosCompletos[id];
-            contenedorDetalle.style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function volverAListado() {
-            document.getElementById('articulo-detalle').style.display = 'none';
-            document.getElementById('lista-articulos').style.display = 'block';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Lógica de cálculo de la nómina
         function calcularNomina() {
             const brutoAnual = parseFloat(document.getElementById('bruto').value);
             const pagas = parseInt(document.getElementById('pagas').value);
